@@ -1,0 +1,67 @@
+/* width */
+::-webkit-scrollbar {
+    width: 2px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 2px grey;
+    border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: grey;
+    border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: grey;
+}
+
+:root {
+    --primary-color: #f05123;
+    --black-color: #000;
+    --white-color: #fff;
+    --gray-color: #666;
+    --text-color: #333;
+    --plum-color: #b80257;
+    --fb-color: #4080ff;
+    --mail-color: #f47425;
+    --invalid-color: #f33a58;
+    --desc-color: #0000008a;
+    --first-color: #1dbfaf;
+    --second-color: #1dbfaf;
+    --button-color: #1dbfaf;
+    --button-image: linear-gradient(70.06deg, #2cccff -5%, #22dfbf 106%);
+    --font-family: 'Montserrat',Arial,Helvetica,sans-serif;
+    --font-code: 'Fira Code',monospace;
+    --home-slideshow-left-space: 116px;
+    --home-section-left-space: 160px;
+
+}
+
+* {
+    box-sizing: inherit;
+}
+
+html {
+    /* font-size: 62.5%; */
+    line-height: 1.6rem;
+    /* font-family: 'Roboto', sans-serif; */
+    box-sizing: border-box;
+}
+
+.grid{
+    /* width: 1200px; */
+    max-width: 100%;
+    margin: 0 auto;
+}
+.grid__full-width{
+    width: 100%;
+}
+.grid__row{
+    display: flex;
+    flex-wrap: wrap;
+}

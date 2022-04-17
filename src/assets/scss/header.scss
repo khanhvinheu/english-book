@@ -1,0 +1,100 @@
+
+.header__navbar-logo{
+    display: flex;
+    align-items: center;
+}
+.header__navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.header{
+    background-color: #fff;
+    border-bottom: 1px solid rgba(236, 226, 226, 0.877) ;
+    padding: 0 20px;
+    height: 66px;
+    position: sticky;
+    z-index: 20;
+    position: -webkit-sticky;
+    top: 0;
+    left: 0;
+    right: 0;
+    transition: -webkit-transform .5s ease;
+    transition: transform .5s ease;
+    transition: transform .5s ease,-webkit-transform .5s ease;
+    will-change: transform;
+    padding-top:10px;
+     
+}
+.header__naver-logo-title{
+    color: #000;
+    font-size: 2rem;
+}
+.header__navbar-search{
+    flex-basis: 500px;
+}
+.header__naver-logo-title{
+    padding-left: 5px;
+    font-weight: bold;
+}
+
+
+.header__nav-mobile{
+    background-color: #fff;
+    padding-top: 10px;
+    display: none;
+    position: fixed;
+    width: 320px;
+    max-width: 100%;   
+    top: 0;
+    left: 0;
+    height: 100vh;
+    z-index: 999;
+}
+.header__button-close{
+    display: flex;
+    justify-content: end;
+    padding-right: 10px;
+}
+.nav__overlay{
+    display: none;
+    position: fixed;
+    height: 100vh;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgb(0,0,0,0.5);
+}
+
+.header__nav-mobile-list{
+    margin-top: 24px;
+}
+
+
+
+.bt-show:checked ~ .header__nav-mobile{
+ display: block;
+}
+.bt-show:checked ~ .nav__overlay{
+ display: block;
+}
+
+
+@media screen and (max-width: 1200px){
+    .header__button-navbar{
+        display: block;
+    }
+    .header__navbar-search{
+        display: none;
+    }
+    .header__navbar-button{
+        display: none;
+    }
+    .header__navbar-logo{
+        display: none;
+    }
+    .header__naver-logo-title{
+        font-size: 18px;
+    }
+}
