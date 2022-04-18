@@ -10,20 +10,25 @@
           <span class="header__naver-logo-title">English-Book</span>
         </div>
 
- 
-
-
         <div class="header__button-navbar">
-          <label for="check__show-nav" class="header__button-show"><el-icon style="font-size: 25px;"><icon-menu /></el-icon></label>
+          <label for="check__show-nav" class="header__button-show">            
+            <el-icon style="font-size: 25px;"><expand /></el-icon></label>
           <input name="" hidden class="bt-show" id="check__show-nav" type="checkbox">
           <div class="header__nav-mobile">
-            <label for="check__show-nav" class="header__button-close"><el-icon style="font-size: 25px;"><icon-menu /></el-icon></label>
+            <label for="check__show-nav" class="header__button-close">
+              <div class="header__navbar-logo-mobile">
+                <!-- <img src="/img/logo.png" width="100" class="header__navbar-logo-img" alt="" srcset=""> -->
+                <el-avatar shape="square"  :size="40"  class="header__navbar-logo-img" fit="fill" src="./img/logo.png" />
+                <span class="header__naver-logo-title">English-Book</span>
+              </div>
+              <el-icon style="font-size: 25px;" class="close__btn"><close-bold /></el-icon>
+            </label>
 
             <ul class="header__nav-mobile-list">
-              <li class="header__nav-mobile-item">1</li>
-              <li class="header__nav-mobile-item">2</li>
-              <li class="header__nav-mobile-item">3</li>
-              <li class="header__nav-mobile-item">4</li>
+              <li class="header__nav-mobile-item active "><el-icon style="font-size: 25px;"><home-filled /></el-icon><span class="mobile__item-title">Home</span></li>
+              <li class="header__nav-mobile-item"><el-icon style="font-size: 25px;"><notebook /></el-icon><span class="mobile__item-title">Book</span></li>
+              <li class="header__nav-mobile-item"><el-icon style="font-size: 25px;"><video-camera /></el-icon><span class="mobile__item-title">Video</span></li>
+              <li class="header__nav-mobile-item"><el-icon style="font-size: 25px;"><trend-charts /></el-icon><span class="mobile__item-title">Course</span></li>
             </ul>
 
           </div>
@@ -43,6 +48,7 @@
         </div>
         <div class="header__navbar-button">
           <button class="header__navbar-button-login" id="login">Đăng nhập</button>
+          <el-icon class="header__navbar-button-notification" style="font-size: 25px;"><bell-filled/></el-icon>
         </div>
       </nav>      
     </div>
@@ -55,7 +61,7 @@
           <nav class="navbar__menu">
             <ul class="navbar__menu-list">
               <li class="navbar__menu-item"><button id="btn-menu-add"><el-icon style="font-size: 25px;"><plus /></el-icon></button> </li>
-              <li class="navbar__menu-item"><button id="btn-menu"><el-icon style="font-size: 25px;"><home-filled /></el-icon> <p style="font-size: 12px; margin: 0;">Home</p></button> </li>
+              <li class="navbar__menu-item"><button id="btn-menu" class="active" ><el-icon style="font-size: 25px;"><home-filled /></el-icon> <p style="font-size: 12px; margin: 0;">Home</p></button> </li>
               <li class="navbar__menu-item"><button id="btn-menu"><el-icon style="font-size: 25px;"><notebook /></el-icon> <p style="font-size: 12px; margin: 0;">Book</p></button> </li>
               <li class="navbar__menu-item"><button id="btn-menu"><el-icon style="font-size: 25px;"><video-camera /></el-icon> <p style="font-size: 12px; margin: 0;">Video</p></button></li>
               <li class="navbar__menu-item"><button id="btn-menu"><el-icon style="font-size: 25px;"><trend-charts /></el-icon> <p style="font-size: 12px; margin: 0;">Course</p></button> </li>
@@ -180,7 +186,7 @@ import {
   Location,
   Setting,
   Plus,
-  HomeFilled,Notebook,VideoCamera,TrendCharts,Search
+  HomeFilled,Notebook,VideoCamera,TrendCharts,Search,CloseBold,Expand,BellFilled
 } from "@element-plus/icons-vue";
 export default {
   components: {
@@ -189,7 +195,7 @@ export default {
     Setting,
     IconMenu,
     Plus,
-    HomeFilled,Notebook,VideoCamera,TrendCharts,Search
+    HomeFilled,Notebook,VideoCamera,TrendCharts,Search,CloseBold,Expand,BellFilled
   },
   data(){
     return {
@@ -205,6 +211,16 @@ export default {
           background:'linear-gradient(90deg, rgba(2,0,36,0.6306897759103641) 0%, rgba(12,49,193,1) 35%, rgba(0,255,184,1) 100%)',
           color:'#ffffff'
         },
+        {
+          title:'Khóa học tiếng anh giao tiếp cơ bản',
+          background:'linear-gradient(90deg, rgba(2,0,36,0.6306897759103641) 0%, rgba(12,193,148,1) 35%, rgba(0,255,184,1) 100%)',
+          color:'#ffffff'
+        },
+        {
+          title:'Khóa học tiếng anh giao tiếp cơ bản',
+          background:'linear-gradient(90deg, rgba(2,0,36,0.6306897759103641) 0%, rgba(12,49,193,1) 35%, rgba(0,255,184,1) 100%)',
+          color:'#ffffff'
+        }      
       ]
     }
   }
