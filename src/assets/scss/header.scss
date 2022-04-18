@@ -32,13 +32,11 @@
 .header__naver-logo-title{
     color: #000;
     font-size: 2rem;
+    padding-left: 5px;
+    font-weight: bold;
 }
 .header__navbar-search{
     flex-basis: 500px;
-}
-.header__naver-logo-title{
-    padding-left: 5px;
-    font-weight: bold;
 }
 
 
@@ -72,7 +70,7 @@
     margin-top: 24px;
     padding: 0;
     list-style: none;
-    font-size: 20px;
+    font-size: 1.5rem;
     line-height: 40px;    
 }
 .header__nav-mobile-item{
@@ -100,6 +98,9 @@
 }
 .bt-show:checked ~ .nav__overlay{
  display: block;
+}
+#header__navbar-input-search{
+    border-radius: 20px;
 }
 
 @keyframes fadeIn {

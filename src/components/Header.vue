@@ -1,0 +1,79 @@
+<template>
+    <nav class="header__navbar">
+        <div class="header__navbar-logo">
+          <!-- <img src="/img/logo.png" width="100" class="header__navbar-logo-img" alt="" srcset=""> -->
+          <el-avatar shape="square"  :size="40"  class="header__navbar-logo-img" fit="fill" src="./img/logo.png" />
+          <span class="header__naver-logo-title">English-Book</span>
+        </div>
+
+        <div class="header__button-navbar">
+          <label for="check__show-nav" class="header__button-show">            
+            <el-icon style="font-size: 25px;"><expand /></el-icon></label>
+          <input name="" hidden class="bt-show" id="check__show-nav" type="checkbox">
+          <div class="header__nav-mobile">
+            <label for="check__show-nav" class="header__button-close">
+              <div class="header__navbar-logo-mobile">
+                <!-- <img src="/img/logo.png" width="100" class="header__navbar-logo-img" alt="" srcset=""> -->
+                <el-avatar shape="square"  :size="40"  class="header__navbar-logo-img" fit="fill" src="./img/logo.png" />
+                <span class="header__naver-logo-title">English-Book</span>
+              </div>
+              <el-icon style="font-size: 25px;" class="close__btn"><close-bold /></el-icon>
+            </label>
+
+            <ul class="header__nav-mobile-list">
+              <li class="header__nav-mobile-item active "><el-icon style="font-size: 25px;"><home-filled /></el-icon><span class="mobile__item-title">Home</span></li>
+              <li class="header__nav-mobile-item"><el-icon style="font-size: 25px;"><notebook /></el-icon><span class="mobile__item-title">Book</span></li>
+              <li class="header__nav-mobile-item"><el-icon style="font-size: 25px;"><video-camera /></el-icon><span class="mobile__item-title">Video</span></li>
+              <li class="header__nav-mobile-item"><el-icon style="font-size: 25px;"><trend-charts /></el-icon><span class="mobile__item-title">Course</span></li>
+            </ul>
+
+          </div>
+          <label for="check__show-nav" class="nav__overlay"></label>
+        
+        </div>
+         
+        <div class="header__navbar-search">
+          <!-- <input type="text" class="header__navbar-inout-search"> -->
+           <el-input
+            v-model="input_search"
+            id="header__navbar-input-search"
+            size="large"
+            placeholder="Tìm kiếm khóa học, bài viết, video...."
+             :prefix-icon="Search"
+          />          
+        </div>
+        <div class="header__navbar-button">
+          <button class="header__navbar-button-login" id="login">Đăng nhập</button>
+          <el-icon class="header__navbar-button-notification" style="font-size: 25px;"><bell-filled/></el-icon>
+        </div>
+      </nav> 
+</template>
+<style>
+    @import '../assets/scss/header.scss';
+    @import '../assets/scss/style.scss';
+</style>
+<script>
+import {
+  Document,
+  Menu as IconMenu,
+  Location,
+  Setting,
+  Plus,
+  HomeFilled,Notebook,VideoCamera,TrendCharts,Search,CloseBold,Expand,BellFilled
+} from "@element-plus/icons-vue";
+export default {
+    components:{
+        Document,
+        Location,
+        Setting,
+        IconMenu,
+        Plus,
+        HomeFilled,Notebook,VideoCamera,TrendCharts,Search,CloseBold,Expand,BellFilled
+    },
+    data(){
+        return{
+            input_search:''
+        }
+    }
+}
+</script>

@@ -23,9 +23,44 @@ menu{
     width: var(--width);
     z-index: 0;
 }
+.title__course{
+    line-height: 4rem;
+}
+.list__course{
+    display: flex;
+    justify-content:space-between;
+    flex-wrap: wrap;  
+    
+}
+.list__course-item{
+    width: ;
+}
+ 
+.list__course-item-contain{
+    height: 140px;    
+    display: flex;
+    margin: 0 auto;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    text-align: center;
+    color: #fff;    
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+  
+}
+.list__course-item-title{
+    text-align: center;
+}
 
 @media screen and (max-width: 1200px){
     .menu{
         display: none;
-    }
+    }  
+    .list__course-item{
+        margin-top: 10px;
+        margin-bottom: 10px;
+        width: 48%;
+    }  
 }
