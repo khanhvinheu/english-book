@@ -42,8 +42,9 @@
              :prefix-icon="Search"
           />          
         </div>
-        <div class="header__navbar-button">
+        <div class="header__navbar-button" style="display: flex;">
           <button class="header__navbar-button-login" id="login">Đăng nhập</button>
+          <el-icon class="header__navbar-button-search" style="font-size: 24px;"><search/></el-icon>
           <el-icon class="header__navbar-button-notification" style="font-size: 25px;"><bell-filled/></el-icon>
         </div>
       </nav> 

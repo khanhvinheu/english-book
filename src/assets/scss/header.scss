@@ -82,8 +82,15 @@
     background-color: #f05123;
     color: #fff;
 }
+.header__navbar-button{
+    display: flex;
+}
 .header__navbar-button-notification{
     display: none;
+}
+.header__navbar-button-search{
+    display: none;
+    margin-right: 10px;
 }
 
 .mobile__item-title{
@@ -123,27 +130,20 @@
 
 
 @media screen and (max-width: 1200px){
-    .header__button-navbar{
-        display: block;
-    }
-    .header__navbar-search{
-        display: none;
-    }
-    .header__navbar-button-login{
-        display: none;
-    }
+   
+    .header__navbar-search,
+    .header__navbar-button-login,
     .header__navbar-logo{
         display: none;
     }
     .header__naver-logo-title{
         font-size: 18px;
     }
-    .header__button-show{
+    .header__button-navbar,
+    .header__button-show,
+    .header__navbar-button-notification , 
+    .header__navbar-button-search{
         display: block;
-    }   
-    .header__navbar-button-notification{
-        display: block;
-        color: #555;
     }
     .header__navbar-logo-mobile{
         display: flex;

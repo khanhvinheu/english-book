@@ -10,19 +10,40 @@
             </el-carousel-item>
           </el-carousel>  
       </div>
-      <div class="list__course">
-        <template v-for="item in course" :key="item">
-          <div class="list__course-item">
-            <div class="list__course-item-contain" v-bind:style="{ 'background-image': item.background,'border-radius':'10px'}">              
+     
+         <div class="cards">  
+           <template v-for="item in course" :key="item">        
+            <div class="card">
+                <img :src="item.background" alt="" class="card-image">
+                <div class="card-content">
+                    <div class="card-top">
+                    <h3 class="card-title">{{item.title}}</h3>
+                    <div class="card-user">
+                        <img src="https://images.unsplash.com/photo-1509316975850-ff9c5deb0cd9?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80" alt="" class="card-user-avatar">
+                        <div class="card-user-info">
+                            <div class="card-user-top">
+                                <h4 class="card-user-name">Khanh Vinh</h4>
+                                <ion-icon name="checkmark-circle"></ion-icon>
+                            </div>
+                            <div class="card-user-game">Dev web</div>
+                            
+                        </div>
+                    </div>
+                  </div>
+                    <div class="card-bottom">
+                        <div class="card-live">
+                            <ion-icon name="wifi"></ion-icon>
+                            <span>Live</span>
+                        </div>
+                        <div class="card-watching">4.2k watching</div>
+                    </div>
+                </div>
             </div>
-            <div class="list__course-item-title">
-                {{item.title}}
-            </div>
-          </div>
-
-        </template>
-      
-      </div>
+            </template> 
+            
+            
+           
+       </div>
     </div>
 </template>
 <script>
@@ -60,25 +81,25 @@ export default {
       course:[
         {
           title:'Kiến thức nền tảng',
-          background:'url(https://files.fullstack.edu.vn/f8-prod/courses/7.png)',
+          background:'https://files.fullstack.edu.vn/f8-prod/courses/7.png',
           color:'#ffffff',
           titleButton:'Đăng ký ngay'
         },
         {
           title:'Luyện nghe tiếng anh',
-          background:'url(https://files.fullstack.edu.vn/f8-prod/courses/7.png)',
+          background:'https://files.fullstack.edu.vn/f8-prod/courses/7.png',
           color:'#ffffff',
           titleButton:'Đăng ký ngay'
         },
         {
           title:'Luyện đọc',
-          background:'url(https://files.fullstack.edu.vn/f8-prod/courses/7.png)',
+          background:'https://files.fullstack.edu.vn/f8-prod/courses/7.png',
           color:'#ffffff',
           titleButton:'Đăng ký ngay'
         },
         {
           title:'Bài tập cơ bản luyện tập ',
-          background:'url(https://files.fullstack.edu.vn/f8-prod/courses/7.png)',
+          background:'https://files.fullstack.edu.vn/f8-prod/courses/7.png',
           color:'#ffffff',
           titleButton:'Đăng ký ngay'
         }      
