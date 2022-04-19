@@ -7,12 +7,13 @@
     </header>
     <div class="container">
       <div class="grid">
+       
        <div class="grid__row">
         <div class="menu">
             <LeftMenu/>
         </div>
         <div class="main">
-          <Home/>
+           <RouterView />
         </div>
       </div>
       </div>
