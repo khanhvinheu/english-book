@@ -51,7 +51,28 @@ menu{
     text-align: center;
 }
 
-@media screen and (max-width: 1200px){
+.course__title{
+    font-size: 1.8rem;    
+    line-height: 2.2rem;
+    text-align: center; 
+}
+
+
+/* Course card   */
+
+
+.cards{
+    --spacing:25px;
+    --column:2;
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: calc(-1 * var(--spacing));   
+}
+@media screen and (max-width: 46.1875em) {
+    .cards{       
+        --spacing: 15px;
+        --column: 1;
+    }
     .menu{
         display: none;
     }  
@@ -60,41 +81,40 @@ menu{
         margin-bottom: 10px;
         width: 48%;
     }  
-}
-
-
-// list course
-
-body{
-    padding: 20px;
-}
-.cards{
-    --spacing:25px;
-    --column:2;
-    display: flex;
-    flex-wrap: wrap;
-    margin-left: calc(-1 * var(--spacing));   
-}
-@media screen and (max-width: 767px) {
-    .cards{
-        --spacing: 15px;
-        --column: 1
+    .course__title{
+        font-size: 1.2rem;    
+        line-height: 2.2rem;
+        text-align: center; 
     }
-  
     
 }
-/* @media screen and (max-width: 1023px) {
+@media screen and (max-width: 63.9375em) and (min-width: 46.25em) {
     .cards{        
         --column: 2
     }
+    .menu{
+        display: none;
+    }  
+    .list__course-item{
+        margin-top: 10px;
+        margin-bottom: 10px;
+        width: 48%;
+    }  
     
-} */
+} 
+@media screen and (min-width: 64em){
+    .cards{        
+        --column: 5
+    }
+    
+} 
+
 .card{
     border-radius: 20px;
     overflow: hidden;
     background-color: #fff;
     box-shadow: rgba(100,100, 111, 0.2) 0px 7px 29px 0px;
-    width: calc(calc(100% / var(--column)) - var(--spacing));
+    width: calc((calc(100% / var(--column))) - var(--spacing));   
     margin-left: var(--spacing);
     margin-bottom: var(--spacing);
     margin-top: var(--spacing);

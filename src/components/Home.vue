@@ -9,8 +9,10 @@
                 </div>
             </el-carousel-item>
           </el-carousel>  
-      </div>
-     
+      </div>     
+        <el-divider content-position="left">
+        <span class="course__title">Các khóa học tiếng anh cơ bản <el-button type="primary" size="small" round>New</el-button></span>       
+        </el-divider>
          <div class="cards">  
            <template v-for="item in course" :key="item">        
             <div class="card">
@@ -40,9 +42,6 @@
                 </div>
             </div>
             </template> 
-            
-            
-           
        </div>
     </div>
 </template>
@@ -87,6 +86,12 @@ export default {
         },
         {
           title:'Luyện nghe tiếng anh',
+          background:'https://files.fullstack.edu.vn/f8-prod/courses/7.png',
+          color:'#ffffff',
+          titleButton:'Đăng ký ngay'
+        },
+        {
+          title:'Luyện đọc',
           background:'https://files.fullstack.edu.vn/f8-prod/courses/7.png',
           color:'#ffffff',
           titleButton:'Đăng ký ngay'
