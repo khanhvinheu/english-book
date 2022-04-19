@@ -13,19 +13,19 @@
         </button>
       </li>
       <li class="navbar__menu-item">
-        <button id="btn-menu" :class=' { "active": selected === 1 } ' @click='changeSelected(1);;$router.push({path: "/about"})' >
+        <button id="btn-menu" :class=' { "active": selected === 1 } ' @click='changeSelected(1);$router.push({path: "/about"})' >
           <el-icon style="font-size: 25px"><notebook /></el-icon>
           <p style="font-size: 12px; margin: 0">Book</p>
         </button>
       </li>
       <li class="navbar__menu-item">
-        <button id="btn-menu" :class=' { "active": selected === 2 } ' @click='changeSelected(2)'>
+        <button id="btn-menu" :class=' { "active": selected === 2 } ' @click='changeSelected(2);$router.push({path: "/about"})'>
           <el-icon style="font-size: 25px"><video-camera /></el-icon>
           <p style="font-size: 12px; margin: 0">Video</p>
         </button>
       </li>
       <li class="navbar__menu-item">
-        <button id="btn-menu" :class=' { "active": selected === 3 } ' @click='changeSelected(3)'>
+        <button id="btn-menu" :class=' { "active": selected === 3 } ' @click='changeSelected(3);$router.push({path: "/about"})'>
           <el-icon style="font-size: 25px"><trend-charts /></el-icon>
           <p style="font-size: 12px; margin: 0">Course</p>
         </button>

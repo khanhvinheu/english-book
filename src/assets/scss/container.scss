@@ -55,6 +55,18 @@ menu{
     font-size: 1.8rem;    
     line-height: 2.2rem;
     text-align: center; 
+ 
+}
+
+.imgage__slide{
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.contain-slide{
+    position: fixed;
+    left: 20px;
 }
 
 
@@ -84,7 +96,15 @@ menu{
     .course__title{
         font-size: 1.2rem;    
         line-height: 2.2rem;
-        text-align: center; 
+       
+    }
+    .contain-slide{
+        position: unset;
+    }
+    .imgage__slide{
+        opacity: 0.1;
+        width: 100%;      
+        top: 0;
     }
     
 }
@@ -100,12 +120,23 @@ menu{
         margin-bottom: 10px;
         width: 48%;
     }  
+    .contain-slide{
+        position: unset;
+    }
+    .imgage__slide{
+        opacity: 0.1;
+        width: 100%;      
+        top: 0;
+    }
     
 } 
 @media screen and (min-width: 64em){
     .cards{        
-        --column: 5
+        --column: 4
     }
+    
+    
+    
     
 } 
 

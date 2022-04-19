@@ -17,6 +17,11 @@
         </div>
       </div>
       </div>
+        <ScrollTopComponent>
+          <a class="btn btn-light">
+           <ion-icon name="arrow-up-outline"></ion-icon>
+          </a>
+      </ScrollTopComponent>
     </div>
     <footer class="footer">
         <div class="grid">
@@ -27,15 +32,26 @@
 </template>
 <style>
  @import './assets/scss/container.scss';
+ .btn {
+    border-radius: 8px;
+    background-color: rgba(0, 0, 0, 0.55);
+    padding-top: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 5px;
+    font-size: 3rem;
+    color: rgb(0, 255, 184);
+}
  </style>
 <script>
 import Header from './components/Header.vue'
 import Footer from './components/Footer.vue'
 import Home from './components/Home.vue'
 import LeftMenu from './components/LeftMenu.vue'
+import ScrollTopComponent from './components/ScrollTop.vue'
 export default {
   components: {   
-    Header,Footer,Home,LeftMenu
+    Header,Footer,Home,LeftMenu,ScrollTopComponent
   },  
 };
 </script>

@@ -23,7 +23,7 @@
           <h3 class="footer__top_list-title">Về English-Book</h3>
         </li>
         <li class="footer__top-lits-item">Giới thiệu</li>
-        <li class="footer__top-lits-item">Cơ hộ</li>
+        <li class="footer__top-lits-item">Cơ hội</li>
         <li class="footer__top-lits-item">Ý tưởng thực hiện</li>
       </ul>
     </div>

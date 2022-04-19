@@ -3,9 +3,14 @@
       <div class="main__slide">
           <el-carousel height="250px">
             <el-carousel-item v-for="item in slide" v-bind:style="{ 'background': item.background,'border-radius':'10px'}">
-                <div class="contain-slide">
-                  <h3 class="title__course" :style="{'color':item.color,'font-size':'20px'}">{{item.title}}</h3>
-                  <button id="register-KH">{{item.titleButton}}</button>
+                <div class="content__slide-home">
+                  <div class="contain-slide">
+                    <h3 class="title__course" :style="{'color':item.color,'font-size':'20px'}">{{item.title}}</h3>
+                    <button id="register-KH">{{item.titleButton}}</button>
+                  </div>
+                  <div class="imgage__slide">
+                    <img :src="item.img" width="550" alt="" srcset="">
+                  </div>
                 </div>
             </el-carousel-item>
           </el-carousel>  
@@ -28,8 +33,7 @@
                                 <h4 class="card-user-name">Khanh Vinh</h4>
                                 <ion-icon name="checkmark-circle"></ion-icon>
                             </div>
-                            <div class="card-user-game">Dev web</div>
-                            
+                            <div class="card-user-game">Dev web</div>                            
                         </div>
                     </div>
                   </div>
@@ -55,27 +59,31 @@ export default {
       slide:[
         {
           title:'Khóa học tiếng anh giao tiếp cơ bản',
-          background:'linear-gradient(90deg, rgba(2,0,36,0.6306897759103641) 0%, rgba(12,193,148,1) 35%, rgba(0,255,184,1) 100%)',
+          background:'linear-gradient(to right, rgb(254, 33, 94), rgb(255, 148, 2))',
           color:'#ffffff',
-          titleButton:'Đăng ký ngay'
+          titleButton:'Đăng ký ngay',
+          img:'./img/baner1.png'
         },
         {
           title:'Khóa học tiếng anh giao tiếp cơ bản',
-          background:'linear-gradient(90deg, rgba(2,0,36,0.6306897759103641) 0%, rgba(12,49,193,1) 35%, rgba(0,255,184,1) 100%)',
+          background:'linear-gradient(to right, rgb(0, 126, 254), rgb(6, 195, 254))',
           color:'#ffffff',
-          titleButton:'Đăng ký ngay'
+          titleButton:'Đăng ký ngay',
+          img:'./img/baner2.png'
         },
         {
           title:'Khóa học tiếng anh giao tiếp cơ bản',
-          background:'linear-gradient(90deg, rgba(2,0,36,0.6306897759103641) 0%, rgba(12,193,148,1) 35%, rgba(0,255,184,1) 100%)',
+          background:'linear-gradient(to right, rgb(0, 126, 254), rgb(6, 195, 254))',
           color:'#ffffff',
-          titleButton:'Đăng ký ngay'
+          titleButton:'Đăng ký ngay',
+          img:'./img/baner3.png'
         },
         {
           title:'Khóa học tiếng anh giao tiếp cơ bản',
-          background:'linear-gradient(90deg, rgba(2,0,36,0.6306897759103641) 0%, rgba(12,49,193,1) 35%, rgba(0,255,184,1) 100%)',
+          background:'linear-gradient(to right, rgb(40, 119, 250), rgb(103, 23, 205))',
           color:'#ffffff',
-          titleButton:'Đăng ký ngay'
+          titleButton:'Đăng ký ngay',
+          img:'./img/banner_4.png'
         }      
       ],
       course:[
@@ -103,12 +111,7 @@ export default {
           color:'#ffffff',
           titleButton:'Đăng ký ngay'
         },
-        {
-          title:'Bài tập cơ bản luyện tập ',
-          background:'https://files.fullstack.edu.vn/f8-prod/courses/7.png',
-          color:'#ffffff',
-          titleButton:'Đăng ký ngay'
-        }      
+      
       ]
     }
   }
