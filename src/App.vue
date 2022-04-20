@@ -2,7 +2,7 @@
   <div class="app">
     <header class="header">
      <div class="grid">      
-       <Header></Header>
+        <Header></Header>
      </div>    
     </header>
     <div class="container">
@@ -13,7 +13,7 @@
             <LeftMenu/>
         </div>
         <div class="main">
-           <RouterView />
+            <RouterView />
         </div>
       </div>
       </div>
@@ -25,7 +25,7 @@
     </div>
     <footer class="footer">
         <div class="grid">
-            <Footer/>
+             <Footer/>
         </div>
     </footer>
   </div>
@@ -52,7 +52,8 @@ import ScrollTopComponent from './components/ScrollTop.vue'
 export default {
   components: {   
     Header,Footer,Home,LeftMenu,ScrollTopComponent
-  },  
+  }
+
 };
 </script>
 

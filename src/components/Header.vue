@@ -20,10 +20,10 @@
               <el-icon style="font-size: 25px;" class="close__btn"><close-bold /></el-icon>
             </label>
             <ul class="header__nav-mobile-list">               
-              <li class="header__nav-mobile-item" :class=' { "active": selected === 0 } ' @click='changeSelected(0);$router.push({path: "/"})'><el-icon style="font-size: 25px;"><home-filled /></el-icon><span class="mobile__item-title">Home</span></li>
-              <li class="header__nav-mobile-item" :class=' { "active": selected === 1 } ' @click='changeSelected(1);;$router.push({path: "/about"})'><el-icon style="font-size: 25px;"><notebook /></el-icon><span class="mobile__item-title">Book</span></li>
-              <li class="header__nav-mobile-item" :class=' { "active": selected === 2 } ' @click='changeSelected(2)'><el-icon style="font-size: 25px;"><video-camera /></el-icon><span class="mobile__item-title">Video</span></li>
-              <li class="header__nav-mobile-item" :class=' { "active": selected === 3 } ' @click='changeSelected(3)'><el-icon style="font-size: 25px;"><trend-charts /></el-icon><span class="mobile__item-title">Course</span></li>
+              <li class="header__nav-mobile-item" :class=' { "active": selected == "Home" } ' @click='$router.push({path: "/"})'><el-icon style="font-size: 25px;"><home-filled /></el-icon><span class="mobile__item-title">Home</span></li>
+              <li class="header__nav-mobile-item" :class=' { "active": selected == "Book"} ' @click='$router.push({path: "/book"})'><el-icon style="font-size: 25px;"><notebook /></el-icon><span class="mobile__item-title">Book</span></li>
+              <li class="header__nav-mobile-item" :class=' { "active": selected == "Video" } ' @click='$router.push({path: "/video"})'><el-icon style="font-size: 25px;"><video-camera /></el-icon><span class="mobile__item-title">Video</span></li>
+              <li class="header__nav-mobile-item" :class=' { "active": selected == "Course" } ' @click='$router.push({path: "/course"})'><el-icon style="font-size: 25px;"><trend-charts /></el-icon><span class="mobile__item-title">Course</span></li>
             </ul>
           </div>
           <label for="check__show-nav" class="nav__overlay"></label>
@@ -98,21 +98,16 @@ export default {
         Plus,
         HomeFilled,Notebook,VideoCamera,TrendCharts,Search,CloseBold,Expand,BellFilled
     },
-    setup () {
-        const selected = ref(0); // index of the selected el
-
-        const changeSelected = (i) => {
-          selected.value = i;
-        };
-        return {
-          changeSelected,
-          selected,
-        };
-    },
     data(){
         return{
-            input_search:''
+            input_search:'',
+            selected:'',
         }
+    },
+    watch:{
+      $route( to,from){
+        this.selected=to.name
+      }
     }
 }
 </script>

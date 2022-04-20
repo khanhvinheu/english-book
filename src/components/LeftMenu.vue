@@ -7,25 +7,25 @@
         </button>
       </li>
       <li class="navbar__menu-item">
-        <button id="btn-menu" :class=' { "active": selected === 0 } ' @click='changeSelected(0);$router.push({path: "/"})' >
+        <button id="btn-menu" :class=' { "active": selected == "Home" } ' @click='$router.push({path: "/"})' >
           <el-icon style="font-size: 25px"><home-filled /></el-icon>
           <p style="font-size: 12px; margin: 0">Home</p>
         </button>
       </li>
       <li class="navbar__menu-item">
-        <button id="btn-menu" :class=' { "active": selected === 1 } ' @click='changeSelected(1);$router.push({path: "/about"})' >
+        <button id="btn-menu" :class=' { "active": selected == "Book" } ' @click='$router.push({path: "/book"})' >
           <el-icon style="font-size: 25px"><notebook /></el-icon>
           <p style="font-size: 12px; margin: 0">Book</p>
         </button>
       </li>
       <li class="navbar__menu-item">
-        <button id="btn-menu" :class=' { "active": selected === 2 } ' @click='changeSelected(2);$router.push({path: "/about"})'>
+        <button id="btn-menu" :class=' { "active": selected == "Video" } ' @click='$router.push({path: "/video"})'>
           <el-icon style="font-size: 25px"><video-camera /></el-icon>
           <p style="font-size: 12px; margin: 0">Video</p>
         </button>
       </li>
       <li class="navbar__menu-item">
-        <button id="btn-menu" :class=' { "active": selected === 3 } ' @click='changeSelected(3);$router.push({path: "/about"})'>
+        <button id="btn-menu" :class=' { "active": selected == "Course"} ' @click='$router.push({path: "/course"})'>
           <el-icon style="font-size: 25px"><trend-charts /></el-icon>
           <p style="font-size: 12px; margin: 0">Course</p>
         </button>
@@ -52,22 +52,16 @@ export default {
         Plus,
         HomeFilled,Notebook,VideoCamera,TrendCharts,Search,CloseBold,Expand,BellFilled
     },
-    setup () {
-        const selected = ref(0); // index of the selected el
-
-        const changeSelected = (i) => {
-          selected.value = i;
-        };
-        return {
-          changeSelected,
-          selected,
-        };
+    data(){
+          return{
+            selected:''
+          }
     },
     methods:{
-      nav_about(){
-        this.$router.push({
-                    path: '/about'
-                });
+    },
+    watch:{
+      $route( to,from){
+          this.selected=to.name
       }
     }
 }
