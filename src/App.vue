@@ -7,7 +7,6 @@
     </header>
     <div class="container">
       <div class="grid">
-       
        <div class="grid__row">
         <div class="menu">
             <LeftMenu/>

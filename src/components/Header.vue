@@ -20,10 +20,10 @@
               <el-icon style="font-size: 25px;" class="close__btn"><close-bold /></el-icon>
             </label>
             <ul class="header__nav-mobile-list">               
-              <li class="header__nav-mobile-item" :class=' { "active": selected == "Home" } ' @click='$router.push({path: "/"})'><el-icon style="font-size: 25px;"><home-filled /></el-icon><span class="mobile__item-title">Home</span></li>
-              <li class="header__nav-mobile-item" :class=' { "active": selected == "Book"} ' @click='$router.push({path: "/book"})'><el-icon style="font-size: 25px;"><notebook /></el-icon><span class="mobile__item-title">Book</span></li>
+              <li class="header__nav-mobile-item" :class=' { "active": selected == "Home" } ' @click='$router.push({path: "/"})'><el-icon style="font-size: 25px;"><home-filled /></el-icon><span class="mobile__item-title">Trang chủ</span></li>
+              <li class="header__nav-mobile-item" :class=' { "active": selected == "Book"} ' @click='$router.push({path: "/book"})'><el-icon style="font-size: 25px;"><notebook /></el-icon><span class="mobile__item-title">Sách</span></li>
               <li class="header__nav-mobile-item" :class=' { "active": selected == "Video" } ' @click='$router.push({path: "/video"})'><el-icon style="font-size: 25px;"><video-camera /></el-icon><span class="mobile__item-title">Video</span></li>
-              <li class="header__nav-mobile-item" :class=' { "active": selected == "Course" } ' @click='$router.push({path: "/course"})'><el-icon style="font-size: 25px;"><trend-charts /></el-icon><span class="mobile__item-title">Course</span></li>
+              <li class="header__nav-mobile-item" :class=' { "active": selected == "Course" } ' @click='$router.push({path: "/course"})'><el-icon style="font-size: 25px;"><trend-charts /></el-icon><span class="mobile__item-title">Khóa học</span></li>
             </ul>
           </div>
           <label for="check__show-nav" class="nav__overlay"></label>
@@ -38,7 +38,7 @@
             size="large"
             placeholder="Tìm kiếm khóa học, bài viết, video...."
              :prefix-icon="Search"
-          />          
+          />
         </div>
         <div class="header__navbar-button" style="display: flex;">
           <button class="header__navbar-button-login" id="login">Đăng nhập</button>

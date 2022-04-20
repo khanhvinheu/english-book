@@ -6,7 +6,7 @@
                 <div class="content__slide-home">
                   <div class="contain-slide">
                     <h3 class="title__course" :style="{'color':item.color,'font-size':'20px'}">{{item.title}}</h3>
-                    <button id="register-KH">{{item.titleButton}}</button>
+<!--                    <button id="register-KH">{{item.titleButton}}</button>-->
                   </div>
                   <div class="imgage__slide">
                     <img :src="item.img" width="550" alt="" srcset="">
@@ -14,9 +14,9 @@
                 </div>
             </el-carousel-item>
           </el-carousel>  
-      </div>     
+      </div>
         <el-divider content-position="left">
-        <span class="course__title">Các khóa học tiếng anh cơ bản <el-button type="primary" size="small" round>New</el-button></span>    
+        <span class="course__title">Các khóa học tiếng anh cơ bản <el-button type="primary" size="small" round>Mới</el-button></span>
         </el-divider>
          <div class="cards">
            <template v-for="item in course" :key="item">        
@@ -47,13 +47,48 @@
             </div>
             </template> 
        </div>
+        <el-divider content-position="left">
+            <span class="course__title">Sách tiếng anh mới nhất <el-button type="success" size="small" round>Mới</el-button></span>
+        </el-divider>
+        <div class="main__slide">
+        <Carousel >
+            <Slide v-for="item in slide" v-bind:style="{ 'background': item.background,'border-radius':'10px', 'height':'250px'}" :key="slide">
+                <div class="content__slide-home">
+                <div class="contain-slide">
+                    <h3 class="title__course" :style="{'color':item.color,'font-size':'20px'}">{{item.title}}</h3>
+<!--                    <button id="register-KH">{{item.titleButton}}</button>-->
+                </div>
+                <div class="imgage__slide">
+                    <img :src="item.img" width="550" alt="" srcset="">
+                </div>
+                </div>
+
+            </Slide>
+
+            <template #addons>
+                <Navigation />
+                <Pagination />
+            </template>
+        </Carousel>
+        </div>
     </div>
+
 </template>
 <script>
+    import { defineComponent } from 'vue'
+    import { Carousel, Navigation, Pagination, Slide } from 'vue3-carousel';
 
-export default { 
+    import 'vue3-carousel/dist/carousel.css';
+    export default {
+    components: {
+        Carousel,
+        Slide,
+        Pagination,
+        Navigation,
+    },
     data(){
     return {
+        show:false,
       input1:'',
       slide:[
         {

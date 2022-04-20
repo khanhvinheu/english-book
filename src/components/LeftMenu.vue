@@ -2,20 +2,28 @@
   <nav class="navbar__menu">
     <ul class="navbar__menu-list">
       <li class="navbar__menu-item">
-        <button id="btn-menu-add">
-          <el-icon style="font-size: 25px"><plus /></el-icon>
-        </button>
+        <el-tooltip
+                class="box-item"
+                effect="dark"
+                content="Tạo blog mới"
+                placement="right-start"
+        >
+          <button id="btn-menu-add">
+            <el-icon style="font-size: 25px"><plus /></el-icon>
+          </button>
+        </el-tooltip>
+
       </li>
       <li class="navbar__menu-item">
         <button id="btn-menu" :class=' { "active": selected == "Home" } ' @click='$router.push({path: "/"})' >
           <el-icon style="font-size: 25px"><home-filled /></el-icon>
-          <p style="font-size: 12px; margin: 0">Home</p>
+          <p style="font-size: 12px; margin: 0">Trang chủ</p>
         </button>
       </li>
       <li class="navbar__menu-item">
         <button id="btn-menu" :class=' { "active": selected == "Book" } ' @click='$router.push({path: "/book"})' >
           <el-icon style="font-size: 25px"><notebook /></el-icon>
-          <p style="font-size: 12px; margin: 0">Book</p>
+          <p style="font-size: 12px; margin: 0">Sách</p>
         </button>
       </li>
       <li class="navbar__menu-item">
@@ -27,7 +35,7 @@
       <li class="navbar__menu-item">
         <button id="btn-menu" :class=' { "active": selected == "Course"} ' @click='$router.push({path: "/course"})'>
           <el-icon style="font-size: 25px"><trend-charts /></el-icon>
-          <p style="font-size: 12px; margin: 0">Course</p>
+          <p style="font-size: 12px; margin: 0">Khóa học</p>
         </button>
       </li>
     </ul>

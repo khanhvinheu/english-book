@@ -12,7 +12,8 @@
     "element-ui": "^2.15.8",
     "qs": "^6.10.3",
     "vue": "^3.2.31",
-    "vue-router": "^4.0.14"
+    "vue-router": "^4.0.14",
+    "vue3-carousel": "^0.1.38"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^2.3.1",
