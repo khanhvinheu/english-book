@@ -15,10 +15,10 @@
             </el-carousel-item>
           </el-carousel>  
       </div>     
-        <el-divider content-position="left">          
+        <el-divider content-position="left">
         <span class="course__title">Các khóa học tiếng anh cơ bản <el-button type="primary" size="small" round>New</el-button></span>    
         </el-divider>
-         <div class="cards">  
+         <div class="cards">
            <template v-for="item in course" :key="item">        
             <div class="card">
                 <img :src="item.background" alt="" class="card-image">

@@ -43,10 +43,18 @@
         <div class="header__navbar-button" style="display: flex;">
           <button class="header__navbar-button-login" id="login">Đăng nhập</button>
           <label for="checkbox__search"><el-icon class="header__navbar-button-search" style="font-size: 24px;"><search/></el-icon></label>
-         
-          <el-badge :value="9"  class="header__navbar-button-notification">
-            <el-icon style="font-size: 25px;"><bell-filled/></el-icon>
-          </el-badge>
+            <el-popover
+                    placement="bottom"
+                    title="Notification"
+                    :width="200"
+                    trigger="click"
+                    content="Check update version">
+              <template #reference>
+                <el-badge :value="9"  class="header__navbar-button-notification">
+                  <el-icon style="font-size: 25px;"><bell-filled/></el-icon>
+                </el-badge>
+              </template>
+            </el-popover>
           <!-- Search Mobile -->
           <input type="checkbox" hidden id="checkbox__search" class="header__navbar-button-search-show">
           <label for="checkbox__search" class="nav__overlay-search"></label>
