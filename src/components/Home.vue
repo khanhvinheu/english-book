@@ -1,153 +1,90 @@
 <template>
     <div class="main__home">
-      <div class="main__slide">
-          <el-carousel height="250px">
-            <el-carousel-item v-for="item in slide" v-bind:style="{ 'background': item.background,'border-radius':'10px'}">
-                <div class="content__slide-home">
-                  <div class="contain-slide">
-                    <h3 class="title__course" :style="{'color':item.color,'font-size':'20px'}">{{item.title}}</h3>
-<!--                    <button id="register-KH">{{item.titleButton}}</button>-->
-                  </div>
-                  <div class="imgage__slide">
-                    <img :src="item.img" width="550" alt="" srcset="">
-                  </div>
-                </div>
-            </el-carousel-item>
-          </el-carousel>  
-      </div>
+        <div class="main__slide">
+            <SlideBarComponent :data="slide"/>
+        </div>
         <el-divider content-position="left">
-        <span class="course__title">Các khóa học tiếng anh cơ bản <el-button type="primary" size="small" round>Mới</el-button></span>
+            <span class="course__title">Các khóa học tiếng anh cơ bản <el-button type="primary" size="small" round>Mới</el-button></span>
         </el-divider>
-         <div class="cards">
-           <template v-for="item in course" :key="item">        
-            <div class="card">
-                <img :src="item.background" alt="" class="card-image">
-                <div class="card-content">
-                    <div class="card-top">
-                    <h3 class="card-title">{{item.title}}</h3>
-                    <div class="card-user">
-                        <img src="https://images.unsplash.com/photo-1509316975850-ff9c5deb0cd9?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80" alt="" class="card-user-avatar">
-                        <div class="card-user-info">
-                            <div class="card-user-top">
-                                <h4 class="card-user-name">Khanh Vinh</h4>
-                                <ion-icon name="checkmark-circle"></ion-icon>
-                            </div>
-                            <div class="card-user-game">Dev web</div>                            
-                        </div>
-                    </div>
-                  </div>
-                    <div class="card-bottom">
-                        <div class="card-live">
-                            <ion-icon name="wifi"></ion-icon>
-                            <span>Live</span>
-                        </div>
-                        <div class="card-watching">4.2k watching</div>
-                    </div>
-                </div>
-            </div>
-            </template> 
-       </div>
+        <div class="cards">
+            <CardItemComponent :data="course"/>
+        </div>
         <el-divider content-position="left">
             <span class="course__title">Sách tiếng anh mới nhất <el-button type="success" size="small" round>Mới</el-button></span>
         </el-divider>
         <div class="main__slide">
-        <Carousel >
-            <Slide v-for="item in slide" v-bind:style="{ 'background': item.background,'border-radius':'10px', 'height':'250px'}" :key="slide">
-                <div class="content__slide-home">
-                <div class="contain-slide">
-                    <h3 class="title__course" :style="{'color':item.color,'font-size':'20px'}">{{item.title}}</h3>
-<!--                    <button id="register-KH">{{item.titleButton}}</button>-->
-                </div>
-                <div class="imgage__slide">
-                    <img :src="item.img" width="550" alt="" srcset="">
-                </div>
-                </div>
 
-            </Slide>
-
-            <template #addons>
-                <Navigation />
-                <Pagination />
-            </template>
-        </Carousel>
         </div>
     </div>
 
 </template>
 <script>
-    import { defineComponent } from 'vue'
-    import { Carousel, Navigation, Pagination, Slide } from 'vue3-carousel';
-
-    import 'vue3-carousel/dist/carousel.css';
+    import SlideBarComponent from "./Common/SlideBarComponent.vue";
+    import CardItemComponent from "./Common/CardItemComponent.vue";
     export default {
-    components: {
-        Carousel,
-        Slide,
-        Pagination,
-        Navigation,
-    },
-    data(){
-    return {
-        show:false,
-      input1:'',
-      slide:[
-        {
-          title:'Khóa học tiếng anh giao tiếp cơ bản',
-          background:'linear-gradient(to right, rgb(254, 33, 94), rgb(255, 148, 2))',
-          color:'#ffffff',
-          titleButton:'Đăng ký ngay',
-          img:'./img/baner1.png'
+        components: {
+            SlideBarComponent,CardItemComponent
         },
-        {
-          title:'Khóa học tiếng anh giao tiếp cơ bản',
-          background:'linear-gradient(to right, rgb(0, 126, 254), rgb(6, 195, 254))',
-          color:'#ffffff',
-          titleButton:'Đăng ký ngay',
-          img:'./img/baner2.png'
-        },
-        {
-          title:'Khóa học tiếng anh giao tiếp cơ bản',
-          background:'linear-gradient(to right, rgb(0, 126, 254), rgb(6, 195, 254))',
-          color:'#ffffff',
-          titleButton:'Đăng ký ngay',
-          img:'./img/baner3.png'
-        },
-        {
-          title:'Khóa học tiếng anh giao tiếp cơ bản',
-          background:'linear-gradient(to right, rgb(40, 119, 250), rgb(103, 23, 205))',
-          color:'#ffffff',
-          titleButton:'Đăng ký ngay',
-          img:'./img/banner_4.png'
-        }      
-      ],
-      course:[
-        {
-          title:'Kiến thức nền tảng',
-          background:'https://files.fullstack.edu.vn/f8-prod/courses/7.png',
-          color:'#ffffff',
-          titleButton:'Đăng ký ngay'
-        },
-        {
-          title:'Luyện nghe tiếng anh',
-          background:'https://files.fullstack.edu.vn/f8-prod/courses/7.png',
-          color:'#ffffff',
-          titleButton:'Đăng ký ngay'
-        },
-        {
-          title:'Luyện đọc',
-          background:'https://files.fullstack.edu.vn/f8-prod/courses/7.png',
-          color:'#ffffff',
-          titleButton:'Đăng ký ngay'
-        },
-        {
-          title:'Luyện đọc',
-          background:'https://files.fullstack.edu.vn/f8-prod/courses/7.png',
-          color:'#ffffff',
-          titleButton:'Đăng ký ngay'
-        },
-      
-      ]
+        data() {
+            return {
+                slide: [
+                    {
+                        title: 'Khóa học tiếng anh giao tiếp cơ bản',
+                        background: 'linear-gradient(to right, rgb(254, 33, 94), rgb(255, 148, 2))',
+                        color: '#ffffff',
+                        titleButton: 'Đăng ký ngay',
+                        img: './img/baner1.png'
+                    },
+                    {
+                        title: 'Khóa học tiếng anh giao tiếp cơ bản',
+                        background: 'linear-gradient(to right, rgb(0, 126, 254), rgb(6, 195, 254))',
+                        color: '#ffffff',
+                        titleButton: 'Đăng ký ngay',
+                        img: './img/baner2.png'
+                    },
+                    {
+                        title: 'Khóa học tiếng anh giao tiếp cơ bản',
+                        background: 'linear-gradient(to right, rgb(0, 126, 254), rgb(6, 195, 254))',
+                        color: '#ffffff',
+                        titleButton: 'Đăng ký ngay',
+                        img: './img/baner3.png'
+                    },
+                    {
+                        title: 'Khóa học tiếng anh giao tiếp cơ bản',
+                        background: 'linear-gradient(to right, rgb(40, 119, 250), rgb(103, 23, 205))',
+                        color: '#ffffff',
+                        titleButton: 'Đăng ký ngay',
+                        img: './img/banner_4.png'
+                    }
+                ],
+                course: [
+                    {
+                        title: 'Kiến thức nền tảng',
+                        background: 'https://files.fullstack.edu.vn/f8-prod/courses/7.png',
+                        color: '#ffffff',
+                        titleButton: 'Đăng ký ngay'
+                    },
+                    {
+                        title: 'Luyện nghe tiếng anh',
+                        background: 'https://files.fullstack.edu.vn/f8-prod/courses/7.png',
+                        color: '#ffffff',
+                        titleButton: 'Đăng ký ngay'
+                    },
+                    {
+                        title: 'Luyện đọc',
+                        background: 'https://files.fullstack.edu.vn/f8-prod/courses/7.png',
+                        color: '#ffffff',
+                        titleButton: 'Đăng ký ngay'
+                    },
+                    {
+                        title: 'Luyện đọc',
+                        background: 'https://files.fullstack.edu.vn/f8-prod/courses/7.png',
+                        color: '#ffffff',
+                        titleButton: 'Đăng ký ngay'
+                    },
+
+                ]
+            }
+        }
     }
-  }
-}
 </script>

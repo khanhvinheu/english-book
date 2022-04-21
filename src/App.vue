@@ -31,16 +31,6 @@
 </template>
 <style>
  @import './assets/scss/container.scss';
- .btn {
-    border-radius: 8px;
-    background-color: rgba(0, 0, 0, 0.55);
-    padding-top: 10px;
-    padding-left: 10px;
-    padding-right: 10px;
-    padding-bottom: 5px;
-    font-size: 3rem;
-    color: rgb(0, 255, 184);
-}
  </style>
 <script>
 import Header from './components/Header.vue'

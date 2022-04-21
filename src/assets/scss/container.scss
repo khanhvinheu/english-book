@@ -1,3 +1,15 @@
+/*Button Croll*/
+.btn {
+    border-radius: 8px;
+    background-color: rgba(0, 0, 0, 0.55);
+    padding-top: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 5px;
+    font-size: 3rem;
+    color: rgb(0, 255, 184);
+}
+/*Main*/
 .container{
     padding: 10px;
 }
@@ -9,274 +21,38 @@ menu{
     padding: 10px;
     flex: 1;
 }
-.navbar__menu{
-    --width: 96px;
-    align-items: center;
-    display: flex;
-    flex-direction: column;
-    flex-shrink: 0;
-    left: 0;
-    padding: 0 8px;
-    position: -webkit-sticky;
-    position: sticky;
-    top: 75px;
-    width: var(--width);
-    z-index: 0;
-}
-.title__course{
-    line-height: 4rem;
-}
-.list__course{
-    display: flex;
-    justify-content:space-between;
-    flex-wrap: wrap;  
-    
-}
-
-.list__course-item-contain{
-    height: 140px;    
-    display: flex;
-    margin: 0 auto;
-    justify-content: center;
-    align-items: center;
-    padding: 20px;
-    text-align: center;
-    color: #fff;    
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-  
-}
-.list__course-item-title{
-    text-align: center;
-}
-
-.course__title{
-    font-size: 1.8rem;    
-    line-height: 2.2rem;
-    text-align: center; 
- 
-}
-
-.imgage__slide{
-    position: absolute;
-    top: 0;
-    right: 0;
-}
-
-.contain-slide{
-    display: block;
-    position: fixed;
-    left: 20px;
-}
-
-.el-carousel__item h3 {
-    color: #475669;
-    font-size: 14px;
-    opacity: 0.75;
-    line-height: 200px;
-    margin: 0;
-    text-align: center;
-}
-
-.el-carousel__item:nth-child(2n) {
-    background-color: #99a9bf;
-}
-
-.el-carousel__item:nth-child(2n + 1) {
-    background-color: #d3dce6;
-}
-#btn-menu-add:hover{
-    background-color: #1dbfaf;
-}
-
-
-/*Slide Carousel*/
-.carousel__prev,
-.carousel__next {
-    box-sizing: content-box;
-    border: 5px solid white;
-}
-
 
 /* Course card   */
-
-
 .cards{
     --spacing:25px;
     --column:2;
     display: flex;
     flex-wrap: wrap;
-    margin-left: calc(-1 * var(--spacing));   
+    margin-left: calc(-1 * var(--spacing));
 }
+
 @media screen and (max-width: 46.1875em) {
-    .cards{       
+    .cards{
         --spacing: 15px;
         --column: 1;
     }
     .menu{
         display: none;
-    }  
-    .list__course-item{
-        margin-top: 10px;
-        margin-bottom: 10px;
-        width: 48%;
-    }  
-    .course__title{
-        font-size: 1.2rem;    
-        line-height: 2.2rem;
-       
     }
-    .contain-slide{
-        position: unset;
-    }
-    .imgage__slide{
-        opacity: 0.1;
-        width: 100%;      
-        top: 0;
-    }
-    
+
 }
 @media screen and (max-width: 63.9375em) and (min-width: 46.25em) {
-    .cards{        
+    .cards{
         --column: 2
     }
     .menu{
         display: none;
-    }  
-    .list__course-item{
-        margin-top: 10px;
-        margin-bottom: 10px;
-        width: 48%;
-    }  
-    .contain-slide{
-        position: unset;
     }
-    .imgage__slide{
-        opacity: 0.1;
-        width: 100%;      
-        top: 0;
-    }
-    
-} 
+
+}
 @media screen and (min-width: 64em){
-    .cards{        
+    .cards{
         --column: 4
     }
-    
-    
-    
-    
-} 
 
-.card{
-    border-radius: 20px;
-    overflow: hidden;
-    background-color: #fff;
-    box-shadow: rgba(100,100, 111, 0.2) 0px 7px 29px 0px;
-    width: calc((calc(100% / var(--column))) - var(--spacing));   
-    margin-left: var(--spacing);
-    margin-bottom: var(--spacing);
-    margin-top: var(--spacing);
-}
-.card-image{
-    height: 200px;
-    width: 100%;
-    object-fit: cover;
-    flex-shrink: 0;    
-}
-.card-top{
-    padding: 25px;
-}
-.card-title{
-    font-weight: 500;
-    margin-bottom: 25px;
-    /* sub title */
-    word-break: break-all;
-    display: -webkit-box;
-    -webkit-line-clamp: 3;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    word-break: break-word;
-}
-.card-user-avatar{
-    width: 40px;
-    height: 40px;   
-    border-radius: 100rem;
-    object-fit: cover;
-    flex-shrink: 0;
-
-}
-.card-user{
-    display: flex;
-    align-items: center;
-}
-.card-user-info{    
-    padding-left: 20px;
-    flex: 1;
-}
-.card-user-top{
-    display: flex;
-    align-items: center;
-    margin-bottom: 2px;
-
-}
-
-.card-user-name{
-    font-weight: 500;
-    font-size: 14px;
-    line-height: 1px;
-}
-.card-user-game{
-    color: #999;
-    font-weight: 300;
-
-}
-.card-user-top ion-icon {
-    color: #20e3b2;
-    margin-left: 5px;
-}
-.card-bottom{
-    padding: 25px;
-    border-top: 1px solid #eee;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-.card-live{
-    color: #fff;
-    display: flex;
-    align-items: center;
-    padding: 5px 15px;
-    border-radius: 10px;
-    background-color: #ff6651;
-}
-.card-live span{
-    padding-left: 10px;
-    font-size: 14px;
-}
-.card-watching{
-    font-size: 13px;
-    color: #999;
-    font-weight: 300;
-}
-.card-content{
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-}
-.card-top{
-    display: flex;
-    flex-direction: column;
-    flex: 1;
-}
-.card-user,
- .card-bottom{
-    margin-top: auto;
-    flex-shrink: 0;
-}
-.card{
-    display: flex;
-    flex-direction: column;
 }
