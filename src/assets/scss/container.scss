@@ -21,7 +21,20 @@ menu{
     padding: 10px;
     flex: 1;
 }
-
+.navbar__menu{
+    --width: 96px;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
+    left: 0;
+    padding: 0 8px;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 74px;
+    width: var(--width);
+    z-index: 8;
+}
 /* Course card   */
 .cards{
     --spacing:25px;
