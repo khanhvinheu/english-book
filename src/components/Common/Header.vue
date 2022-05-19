@@ -41,7 +41,7 @@
           />
         </div>
         <div class="header__navbar-button" style="display: flex;">
-          <button class="header__navbar-button-login" id="login">Đăng nhập</button>
+          <button class="header__navbar-button-login" id="login"  @click='$router.push({path: "/login"})'>Đăng nhập</button>
           <label for="checkbox__search"><el-icon class="header__navbar-button-search" style="font-size: 24px;"><search/></el-icon></label>
             <el-popover
                     placement="bottom"
@@ -84,8 +84,8 @@
       </nav> 
 </template>
 <style>
-    @import '../assets/scss/header.scss';
-    @import '../assets/scss/style.scss';
+    @import '../../assets/scss/header.scss';
+    @import '../../assets/scss/style.scss';
 </style>
 <script>
 import {

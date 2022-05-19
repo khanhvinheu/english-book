@@ -7,27 +7,42 @@ const router = createRouter({
   routes: [
     { path: "/:pathMatch(.*)*", redirect:'/home' },
     {
-      path: '/home',
-      name: 'Home',
+      path: '/login',
+      name: 'Login',
       component: () =>
-          import ("../components/Home.vue")
+          import ("../components/views/LoginComponent.vue")
     },
     {
-      path: '/book',
-      name: 'Book',
+      path: '/app',
+      name: 'App',
       component: () =>
-          import ("../components/views/About.vue")
-    }, {
-      path: '/video',
-      name: 'Video',
-      component: () =>
-          import ("../components/views/About.vue")
-    }, {
-      path: '/course',
-      name: 'Course',
-      component: () =>
-          import ("../components/views/About.vue")
+          import ("../components/HomeApp.vue"),
+      children:[
+          {
+            path: '/home',
+            name: 'Home',
+            component: () =>
+                import ("../components/views/Home.vue"),
+          },
+          {
+            path: '/book',
+            name: 'Book',
+            component: () =>
+                import ("../components/views/About.vue")
+          }, {
+            path: '/video',
+            name: 'Video',
+            component: () =>
+                import ("../components/views/About.vue")
+          }, {
+            path: '/course',
+            name: 'Course',
+            component: () =>
+                import ("../components/views/About.vue")
+          },
+      ]
     },
+
 
   ]
 })

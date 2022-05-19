@@ -14,7 +14,8 @@
     "vue": "^3.2.31",
     "vue-comment-grid": "^1.0.12",
     "vue-router": "^4.0.14",
-    "vue3-carousel": "^0.1.38"
+    "vue3-carousel": "^0.1.38",
+    "vue3-google-oauth2": "^1.0.6"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^2.3.1",

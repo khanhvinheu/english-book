@@ -19,8 +19,8 @@
 
 </template>
 <script>
-    import SlideBarComponent from "./Common/SlideBarComponent.vue";
-    import CardItemComponent from "./Common/CardItemComponent.vue";
+    import SlideBarComponent from "../Common/SlideBarComponent.vue";
+    import CardItemComponent from "../Common/CardItemComponent.vue";
     export default {
         components: {
             SlideBarComponent,CardItemComponent

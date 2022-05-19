@@ -67,6 +67,9 @@ export default {
     },
     methods:{
     },
+    mounted() {
+      this.selected=this.$route.name
+    },
     watch:{
       $route( to,from){
           this.selected=to.name
