@@ -13,13 +13,14 @@
 </template>
 
 <script>
-import { initFbsdk } from '@/config/facebook_oAuth.js'
+import { initFbsdk } from '../../config/facebook_oAuth'
 import router from '../../router/index'
+
 
 export default {
   name: 'login_signup_social',
   mounted () {
-    // initFbsdk()
+    initFbsdk()
   },
   methods: {
     loginWithGoogle () {
@@ -51,6 +52,7 @@ export default {
         })
     },
     loginWithFacebook () {
+    
       window.FB.login(response => {
         if (response && response.authResponse) {
           console.log('response', response)

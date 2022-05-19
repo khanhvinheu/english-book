@@ -10,15 +10,17 @@
     "@element-plus/icons-vue": "^1.1.4",
     "element-plus": "^2.1.9",
     "element-ui": "^2.15.8",
+    "fb": "^2.0.0",
     "qs": "^6.10.3",
     "vue": "^3.2.31",
     "vue-comment-grid": "^1.0.12",
+    "vue-facebook": "^1.1.0",
     "vue-router": "^4.0.14",
-    "vue3-carousel": "^0.1.38",
-    "vue3-google-oauth2": "^1.0.6"
+    "vue3-carousel": "^0.1.38"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^2.3.1",
+    "sass": "^1.51.0",
     "unplugin-auto-import": "^0.7.1",
     "unplugin-vue-components": "^0.19.3",
     "vite": "^2.9.1"
