@@ -52,7 +52,7 @@ export default {
         })
     },
     loginWithFacebook () {
-    
+
       window.FB.login(response => {
         if (response && response.authResponse) {
           console.log('response', response)
@@ -83,3 +83,38 @@ export default {
   }
 }
 </script>
+<style>
+.signup-buttons {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  width: 100%;
+  margin-left: 10px;
+}
+.facebook-signup, .google-signup {
+  color: #031b4e;
+  background: #f2f8ff;
+  border: 1px solid rgba(0,105,255,.2);
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  border-radius: 3px;
+  display: inline-block;
+  margin-top: 0;
+  width: 47%;
+  padding: 15px;
+  text-align: center;
+  position: inherit;
+  margin-right: 10px;
+}
+.signup-buttons a {
+  vertical-align: middle;
+  text-decoration: none;
+}
+.signup-buttons svg {
+  left: 16px;
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+</style>

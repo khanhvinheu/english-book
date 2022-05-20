@@ -62,13 +62,10 @@ export default {
     },
     data(){
           return{
-            selected:''
+            selected:"Home"
           }
     },
     methods:{
-    },
-    mounted() {
-      this.selected=this.$route.name
     },
     watch:{
       $route( to,from){

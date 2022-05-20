@@ -23,7 +23,7 @@
     transition: transform .5s ease;
     transition: transform .5s ease,-webkit-transform .5s ease;
     will-change: transform;
-    padding-top:10px;     
+    padding-top:10px;
 }
 .header__button-show{
     display: none;
@@ -42,10 +42,10 @@
 
 .header__nav-mobile{
     background-color: #fff;
-    padding-top: 10px;   
+    padding-top: 10px;
     position: fixed;
     width: 320px;
-    max-width: 100%;   
+    max-width: 100%;
     top: 0;
     left: 0;
     height: 100vh;
@@ -56,16 +56,16 @@
 
 .header__nav-mobile-search{
     background-color: #fff;
-    padding-top: 10px;   
+    padding-top: 10px;
     position: fixed;
     width: 100%;
-    max-width: 100%;   
+    max-width: 100%;
     top: 0;
     right: 0;
     height: 100vh;
     z-index: 999999;
     transform: translateX(-200%);
-    transition: linear 0.2s;    
+    transition: linear 0.2s;
 }
 
 .nav__overlay,
@@ -86,7 +86,7 @@
     padding: 0;
     list-style: none;
     font-size: 1.5rem;
-    line-height: 40px;    
+    line-height: 40px;
 }
 .header__nav-mobile-item{
     display: flex;
@@ -121,7 +121,7 @@
 
 .bt-show:checked ~ .header__nav-mobile{
     transform: translateX(0%);
-    
+
 }
 .bt-show:checked ~ .nav__overlay{
  display: block;
@@ -160,10 +160,13 @@
     background-color: #f05123;
     color: #fff;
 }
+.box__user-mobile{
+    width: 100%;
+}
 
 
 @media screen and (max-width: 1200px){
-   
+
     .header__navbar-search,
     .header__navbar-button-login,
     .header__navbar-logo{
@@ -174,7 +177,7 @@
     }
     .header__button-navbar,
     .header__button-show,
-    .header__navbar-button-notification , 
+    .header__navbar-button-notification ,
     .header__navbar-button-search{
         display: block;
     }
@@ -183,18 +186,18 @@
         align-items: center;
     }
     .header__button-close{
-        display: flex;       
-        padding-right: 10px;  
+        display: flex;
+        padding-right: 10px;
         padding-left: 10px;
-        padding-bottom: 10px;    
+        padding-bottom: 10px;
         align-items: center;
         justify-content: space-between;
         border-bottom: 1px solid rgb(240, 235, 235);
     }
-    .close__btn{        
+    .close__btn{
         transition:1s;
     }
-    .close__btn:hover{      
+    .close__btn:hover{
         transition:1s;
         -o-transform:rotate(720deg);
         -ms-transform:rotate(720deg);

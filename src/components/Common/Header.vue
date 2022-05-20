@@ -7,7 +7,7 @@
         </div>
 
         <div class="header__button-navbar">
-          <label for="check__show-nav" class="header__button-show">            
+          <label for="check__show-nav" class="header__button-show">
             <el-icon style="font-size: 25px;"><expand /></el-icon></label>
           <input name="" hidden class="bt-show" id="check__show-nav" type="checkbox">
           <div class="header__nav-mobile">
@@ -19,17 +19,27 @@
               </div>
               <el-icon style="font-size: 25px;" class="close__btn"><close-bold /></el-icon>
             </label>
-            <ul class="header__nav-mobile-list">               
+            <div class="box__user-mobile">
+<!--              @click='$router.push({path: "/login"})'-->
+              <ul class="header__nav-mobile-list">
+              <li class="header__nav-mobile-item" :class=' { "active": selected == "" } ' @click='$router.push({path: "/login"})'><el-icon style="font-size: 25px;"><avatar /></el-icon><span class="mobile__item-title">Đăng nhập</span></li>
+              <li class="header__nav-mobile-item" :class=' { "active": selected == "" } '><ion-icon style="font-size: 25px;" name="create-outline"></ion-icon><span class="mobile__item-title">Đăng ký</span></li>
+              <li class="header__nav-mobile-item" :class=' { "active": selected == "" } '><ion-icon style="font-size: 25px;" name="settings-outline"></ion-icon><span class="mobile__item-title">Cài đặt hệ thống</span></li>
+              </ul>
+            </div>
+            <el-divider />
+            <ul class="header__nav-mobile-list">
               <li class="header__nav-mobile-item" :class=' { "active": selected == "Home" } ' @click='$router.push({path: "/"})'><el-icon style="font-size: 25px;"><home-filled /></el-icon><span class="mobile__item-title">Trang chủ</span></li>
               <li class="header__nav-mobile-item" :class=' { "active": selected == "Book"} ' @click='$router.push({path: "/book"})'><el-icon style="font-size: 25px;"><notebook /></el-icon><span class="mobile__item-title">Sách</span></li>
               <li class="header__nav-mobile-item" :class=' { "active": selected == "Video" } ' @click='$router.push({path: "/video"})'><el-icon style="font-size: 25px;"><video-camera /></el-icon><span class="mobile__item-title">Video</span></li>
               <li class="header__nav-mobile-item" :class=' { "active": selected == "Course" } ' @click='$router.push({path: "/course"})'><el-icon style="font-size: 25px;"><trend-charts /></el-icon><span class="mobile__item-title">Khóa học</span></li>
+              <el-divider />
             </ul>
           </div>
           <label for="check__show-nav" class="nav__overlay"></label>
-        
+
         </div>
-         
+
         <div class="header__navbar-search">
           <!-- <input type="text" class="header__navbar-inout-search"> -->
            <el-input
@@ -43,6 +53,7 @@
         <div class="header__navbar-button" style="display: flex;">
           <button class="header__navbar-button-login" id="login"  @click='$router.push({path: "/login"})'>Đăng nhập</button>
           <label for="checkbox__search"><el-icon class="header__navbar-button-search" style="font-size: 24px;"><search/></el-icon></label>
+
             <el-popover
                     placement="bottom"
                     title="Notification"
@@ -75,13 +86,13 @@
                   size="large"
                   placeholder="Tìm kiếm khóa học, bài viết, video...."
                   :prefix-icon="Search"
-                />    
+                />
                 <el-icon class="navbar__header-icon-search"><search /></el-icon><span class="mobile__item-title"></span>
-              </li>             
+              </li>
             </ul>
           </div>
         </div>
-      </nav> 
+      </nav>
 </template>
 <style>
     @import '../../assets/scss/header.scss';
@@ -94,7 +105,7 @@ import {
   Location,
   Setting,
   Plus,
-  HomeFilled,Notebook,VideoCamera,TrendCharts,Search,CloseBold,Expand,BellFilled
+  HomeFilled,Notebook,VideoCamera,TrendCharts,Search,CloseBold,Expand,BellFilled, Avatar
 } from "@element-plus/icons-vue";
 import { ref } from 'vue'
 export default {
@@ -104,12 +115,15 @@ export default {
         Setting,
         IconMenu,
         Plus,
-        HomeFilled,Notebook,VideoCamera,TrendCharts,Search,CloseBold,Expand,BellFilled
+        HomeFilled,Notebook,VideoCamera,TrendCharts,Search,CloseBold,Expand,BellFilled,Avatar,
     },
     data(){
         return{
+            icon:{
+              Document,Avatar
+            },
             input_search:'',
-            selected:'',
+            selected:'Home',
         }
     },
     watch:{

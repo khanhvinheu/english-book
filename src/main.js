@@ -5,6 +5,7 @@ import GAuth from './config/google_oAuth'
 
 const app = createApp(App)
 const gAuthOptions = { clientId: '734152041521-3da39udq2rrh2h52n0ga1j7d7rm1uhal.apps.googleusercontent.com',
+                       clientSecret:'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',
                        scope: 'email',
                        prompt: 'consent',
                        fetch_basic_profile: true,

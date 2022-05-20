@@ -1,0 +1,51 @@
+.container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-image: url("../img/backgound_login.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.background__page{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(0, 0, 0, 0.6);
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  z-index: 1;
+}
+.main__login{
+  z-index: 2;
+  width: 300px;
+  height: 400px;
+  background-color: #ffffff;
+  box-shadow: rgba(100,100, 111, 0.2) 0px 7px 29px 0px;
+}
+.title__login-box{
+  width: 100%;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.text__title{
+  font-size: 29px;
+  font-weight: bolder;
+  color: #f05123;
+  text-transform: uppercase;
+}
+.input__box{
+  padding:0px 10px 0px;
+}
+.login__with{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+
+}
