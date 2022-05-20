@@ -62,7 +62,7 @@ export default {
               auth: response.authResponse
             }
           }
-          this.$store.commit('setLoginUser', userInfo)
+          // this.$store.commit('setLoginUser', userInfo)
           window.FB.api(`/${response.authResponse.userID}`, userResponse => {
             if (userResponse) {
               console.log(userResponse);
@@ -73,7 +73,7 @@ export default {
                   user: userResponse
                 }
               }
-              this.$store.commit('setLoginUser', userInfo)
+              // this.$store.commit('setLoginUser', userInfo)
             }
           }, this.params);
           router.push('/home')
