@@ -2,7 +2,7 @@
     width: 200px;
     min-height: 400px;
   }
-  
+
   .contain-slide{
       height: 200px;
       text-align: center;
@@ -11,7 +11,7 @@
       display: list-item;
       align-items: center;
       justify-content: center;
-      
+
   }
   #register-KH{
     font-size: 16px;
@@ -46,20 +46,21 @@
     border-color: #ffff;
   }
 
-  .menu, .menu ul{    
+  .menu, .menu ul{
     padding: 0;
     margin: 0;
     list-style-type: none;
     display: table-caption;
     text-align: center;
-    
+
   }
   #btn-menu{
-      height: 70px;
-      width: 70px;
+      height: 65px;
+      width: 65px;
       border-radius: 20px;
       border: none;
       margin-bottom: 10px;
+
   }
  .router-link-exact-active .btn-menu{
     height: 70px;
@@ -85,7 +86,7 @@
       padding-top: 10px;
       margin: 20px;
   }
-    #header{    
+    #header{
         --height: 66px;
         align-items: center;
         background-color: #fff;
@@ -104,8 +105,8 @@
         transition: transform .5s ease;
         transition: transform .5s ease,-webkit-transform .5s ease;
         will-change: transform;
-        z-index: 20;    
-  
+        z-index: 20;
+
   }
   #container{
       display: flex;
@@ -114,26 +115,26 @@
       border-radius: 20px;
      box-shadow: #f05123;
   }
-  #footer{        
+  #footer{
       background-color: black !important;
       height: 400px;
       color: #ffff;
       padding: 68px 0 40px;
       line-height: 30px;
-      
+
   }
 
   .footer-top{
-   
-    display: flex; 
+
+    display: flex;
     justify-content: space-evenly ;
-    
+
   }
   .footer-bottom{
     display: flex;
     justify-content: space-around;
     padding-top:60px;
-   
+
   }
   #catelogy{
     --width: 96px;

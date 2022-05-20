@@ -17,25 +17,25 @@
       <li class="navbar__menu-item">
         <button id="btn-menu" :class=' { "active": selected == "Home" } ' @click='$router.push({path: "/"})' >
           <el-icon style="font-size: 25px"><home-filled /></el-icon>
-          <p style="font-size: 12px; margin: 0">Trang chủ</p>
+          <p style="font-size: 10px; margin: 0">Trang chủ</p>
         </button>
       </li>
       <li class="navbar__menu-item">
         <button id="btn-menu" :class=' { "active": selected == "Book" } ' @click='$router.push({path: "/book"})' >
           <el-icon style="font-size: 25px"><notebook /></el-icon>
-          <p style="font-size: 12px; margin: 0">Sách</p>
+          <p style="font-size: 10px; margin: 0">Sách</p>
         </button>
       </li>
       <li class="navbar__menu-item">
         <button id="btn-menu" :class=' { "active": selected == "Video" } ' @click='$router.push({path: "/video"})'>
           <el-icon style="font-size: 25px"><video-camera /></el-icon>
-          <p style="font-size: 12px; margin: 0">Video</p>
+          <p style="font-size: 10px; margin: 0">Video</p>
         </button>
       </li>
       <li class="navbar__menu-item">
         <button id="btn-menu" :class=' { "active": selected == "Course"} ' @click='$router.push({path: "/course"})'>
           <el-icon style="font-size: 25px"><trend-charts /></el-icon>
-          <p style="font-size: 12px; margin: 0">Khóa học</p>
+          <p style="font-size: 10px; margin: 0">Khóa học</p>
         </button>
       </li>
     </ul>
@@ -62,7 +62,7 @@ export default {
     },
     data(){
           return{
-            selected:"Home"
+            selected:""
           }
     },
     methods:{

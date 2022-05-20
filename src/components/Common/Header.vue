@@ -22,9 +22,9 @@
             <div class="box__user-mobile">
 <!--              @click='$router.push({path: "/login"})'-->
               <ul class="header__nav-mobile-list">
-              <li class="header__nav-mobile-item" :class=' { "active": selected == "" } ' @click='$router.push({path: "/login"})'><el-icon style="font-size: 25px;"><avatar /></el-icon><span class="mobile__item-title">Đăng nhập</span></li>
-              <li class="header__nav-mobile-item" :class=' { "active": selected == "" } '><ion-icon style="font-size: 25px;" name="create-outline"></ion-icon><span class="mobile__item-title">Đăng ký</span></li>
-              <li class="header__nav-mobile-item" :class=' { "active": selected == "" } '><ion-icon style="font-size: 25px;" name="settings-outline"></ion-icon><span class="mobile__item-title">Cài đặt hệ thống</span></li>
+              <li class="header__nav-mobile-item"  @click='$router.push({path: "/login"})'><el-icon style="font-size: 25px;"><avatar /></el-icon><span class="mobile__item-title">Đăng nhập</span></li>
+              <li class="header__nav-mobile-item"><ion-icon style="font-size: 25px;" name="create-outline"></ion-icon><span class="mobile__item-title">Đăng ký</span></li>
+              <li class="header__nav-mobile-item"><ion-icon style="font-size: 25px;" name="settings-outline"></ion-icon><span class="mobile__item-title">Cài đặt hệ thống</span></li>
               </ul>
             </div>
             <el-divider />
@@ -123,7 +123,7 @@ export default {
               Document,Avatar
             },
             input_search:'',
-            selected:'Home',
+            selected:'',
         }
     },
     watch:{
