@@ -12,7 +12,9 @@
             <LeftMenu/>
           </div>
           <div class="main">
-            <RouterView />
+            <Transition duration="550" name="nested">
+              <RouterView />
+            </Transition>
           </div>
         </div>
       </div>
@@ -31,6 +33,7 @@
 </template>
 <style>
 @import '../assets/scss/container.scss';
+@import '../assets/scss/transitionVue.scss';
 </style>
 <script>
 import Header from './Common/Header.vue'

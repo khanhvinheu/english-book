@@ -16,7 +16,6 @@
 
         </div>
     </div>
-
 </template>
 <script>
     import SlideBarComponent from "../Common/SlideBarComponent.vue";
@@ -24,6 +23,8 @@
     export default {
         components: {
             SlideBarComponent,CardItemComponent
+        },
+        mounted() {
         },
         data() {
             return {
@@ -88,3 +89,4 @@
         }
     }
 </script>
+
