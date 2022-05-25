@@ -1,9 +1,6 @@
-
-.course__title{
-  font-size: 1.8rem;
-  line-height: 2.2rem;
-  text-align: center;
-
+  
+#register-KH{
+  margin-top: 20px;
 }
 
 .imgage__slide{
@@ -11,18 +8,18 @@
   top: 0;
   right: 0;
 }
-
-.contain-slide{
-  display: block;
-  position: fixed;
-  left: 20px;
+.content__slide-home{
+  display: flex;
+  justify-content: start;
+  padding: 10px;
 }
+
 
 .el-carousel__item h3 {
   color: #475669;
   font-size: 14px;
   opacity: 0.75;
-  line-height: 200px;
+  line-height: 40px;
   margin: 0;
   text-align: center;
 }

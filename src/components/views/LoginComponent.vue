@@ -4,7 +4,6 @@
           <div class="main__login">
             <div class="title__login-box">
               <el-avatar  :size="130"  class="login-logo-img" fit="fill" src="./img/logo_new.png" />
-<!--              <span class="text__title">BETTER-ENGLISH</span>-->
             </div>
             <div class="input__box">
               <el-input
@@ -23,7 +22,7 @@
                 <template #prepend><el-icon size="20px" color="#f05123"><Key /></el-icon></template>
               </el-input>
               <div style="margin: 20px 0" />
-              <el-button style="width: 100%; height: 50px; border-radius: 0px; background-color: #f05123; color: #ffffff; font-weight: 100; font-size: 16px" >Login</el-button>
+              <el-button @click="$router.push({path:'/home'})" style="width: 100%; height: 50px; border-radius: 0px; background-color: #f05123; color: #ffffff; font-weight: 100; font-size: 16px" >Login</el-button>
             </div>
             <el-divider content-position="center">or Sign In with</el-divider>
             <div class="login__with">

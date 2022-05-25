@@ -1,47 +1,13 @@
 <template>
     <nav class="header__navbar">
-        <div class="header__navbar-logo">
-          <!-- <img src="/img/logo.png" width="100" class="header__navbar-logo-img" alt="" srcset=""> -->
+        <div class="header__navbar-logo">        
           <el-avatar shape="square"  :size="40"  class="header__navbar-logo-img" fit="fill" src="./img/logo.png" />
           <span class="header__naver-logo-title">English-Book</span>
         </div>
-
         <div class="header__button-navbar">
-          <label for="check__show-nav" class="header__button-show">
-            <el-icon style="font-size: 25px;"><expand /></el-icon></label>
-          <input name="" hidden class="bt-show" id="check__show-nav" type="checkbox">
-          <div class="header__nav-mobile">
-            <label for="check__show-nav" class="header__button-close">
-              <div class="header__navbar-logo-mobile">
-                <!-- <img src="/img/logo.png" width="100" class="header__navbar-logo-img" alt="" srcset=""> -->
-                <el-avatar shape="square"  :size="40"  class="header__navbar-logo-img" fit="fill" src="./img/logo.png" />
-                <span class="header__naver-logo-title">English-Book</span>
-              </div>
-              <el-icon style="font-size: 25px;" class="close__btn"><close-bold /></el-icon>
-            </label>
-            <div class="box__user-mobile">
-<!--              @click='$router.push({path: "/login"})'-->
-              <ul class="header__nav-mobile-list">
-              <li class="header__nav-mobile-item"  @click='$router.push({path: "/login"})'><el-icon style="font-size: 25px;"><avatar /></el-icon><span class="mobile__item-title">Đăng nhập</span></li>
-              <li class="header__nav-mobile-item"><ion-icon style="font-size: 25px;" name="create-outline"></ion-icon><span class="mobile__item-title">Đăng ký</span></li>
-              <li class="header__nav-mobile-item"><ion-icon style="font-size: 25px;" name="settings-outline"></ion-icon><span class="mobile__item-title">Cài đặt hệ thống</span></li>
-              </ul>
-            </div>
-            <el-divider />
-            <ul class="header__nav-mobile-list">
-              <li class="header__nav-mobile-item" :class=' { "active": selected == "Home" } ' @click='$router.push({path: "/"})'><el-icon style="font-size: 25px;"><home-filled /></el-icon><span class="mobile__item-title">Trang chủ</span></li>
-              <li class="header__nav-mobile-item" :class=' { "active": selected == "Book"} ' @click='$router.push({path: "/book"})'><el-icon style="font-size: 25px;"><notebook /></el-icon><span class="mobile__item-title">Sách</span></li>
-              <li class="header__nav-mobile-item" :class=' { "active": selected == "Video" } ' @click='$router.push({path: "/video"})'><el-icon style="font-size: 25px;"><video-camera /></el-icon><span class="mobile__item-title">Video</span></li>
-              <li class="header__nav-mobile-item" :class=' { "active": selected == "Course" } ' @click='$router.push({path: "/course"})'><el-icon style="font-size: 25px;"><trend-charts /></el-icon><span class="mobile__item-title">Khóa học</span></li>
-              <el-divider />
-            </ul>
-          </div>
-          <label for="check__show-nav" class="nav__overlay"></label>
-
+          <MenuMobileComponentVue :activeMenu="activeMenu"/>
         </div>
-
-        <div class="header__navbar-search">
-          <!-- <input type="text" class="header__navbar-inout-search"> -->
+        <div class="header__navbar-search">        
            <el-input
             v-model="input_search"
             id="header__navbar-input-search"
@@ -50,8 +16,27 @@
              :prefix-icon="Search"
           />
         </div>
-        <div class="header__navbar-button" style="display: flex;">
-          <button class="header__navbar-button-login" id="login"  @click='$router.push({path: "/login"})'>Đăng nhập</button>
+        <div class="header__navbar-button" style="display: flex; align-items: center;">       
+          <el-button class="header__navbar-button-login" v-show="userInfo.length==0" style="background-color:#f05123; color: #ffffff; border: #f05123;" @click='$router.push({path: "/login"})' round>Đăng nhập</el-button>  
+              <el-popover               
+                    placement="bottom"                   
+                    :width="250"
+                    trigger="click"
+                    >
+              <template #reference >               
+                   <el-icon class="header__navbar-button-login" v-show="userInfo.length !=0" style="font-size: 26px; color: #f05123;"><Avatar /></el-icon>               
+              </template>
+              <div v-show="userInfo.length !=0"  class="popup-userinfo" style="display: flex;justify-content: center; flex-wrap: wrap;">
+                <el-avatar size="large" referrerpolicy="no-referrer" :src="userInfo.profileImage"/>                   
+              </div>
+              <div  v-show="userInfo.length !=0" style="display: flex;justify-content: center; flex-wrap: wrap;">
+                 <span style="margin-top:10px">Xin chào: {{userInfo.name}}</span>     
+                <el-button link @click="logout">Đăng xuất</el-button>
+              </div>
+              
+            </el-popover>
+
+
           <label for="checkbox__search"><el-icon class="header__navbar-button-search" style="font-size: 24px;"><search/></el-icon></label>
 
             <el-popover
@@ -71,8 +56,7 @@
           <label for="checkbox__search" class="nav__overlay-search"></label>
           <div class="header__nav-mobile-search">
             <label for="checkbox__search" class="header__button-close">
-              <div class="header__navbar-logo-mobile">
-                <!-- <img src="/img/logo.png" width="100" class="header__navbar-logo-img" alt="" srcset=""> -->
+              <div class="header__navbar-logo-mobile">               
                 <el-avatar shape="square"  :size="40"  class="header__navbar-logo-img" fit="fill" src="./img/logo.png" />
                 <span class="header__naver-logo-title">English-Book</span>
               </div>
@@ -105,8 +89,9 @@ import {
   Location,
   Setting,
   Plus,
-  HomeFilled,Notebook,VideoCamera,TrendCharts,Search,CloseBold,Expand,BellFilled, Avatar
+  HomeFilled,Notebook,VideoCamera,TrendCharts,Search,CloseBold,Expand,BellFilled, Avatar,DArrowRight
 } from "@element-plus/icons-vue";
+import MenuMobileComponentVue from "./MenuMobileComponent.vue";
 import { ref } from 'vue'
 export default {
     components:{
@@ -115,8 +100,9 @@ export default {
         Setting,
         IconMenu,
         Plus,
-        HomeFilled,Notebook,VideoCamera,TrendCharts,Search,CloseBold,Expand,BellFilled,Avatar,
+        HomeFilled,Notebook,VideoCamera,TrendCharts,Search,CloseBold,Expand,BellFilled,Avatar,MenuMobileComponentVue,DArrowRight
     },
+    props:['activeMenu'],
     data(){
         return{
             icon:{
@@ -124,11 +110,30 @@ export default {
             },
             input_search:'',
             selected:'',
+            userInfo:[],
+            auth:[]
         }
+    },
+    mounted(){
+     this.getUserInfo()
     },
     watch:{
       $route( to,from){
         this.selected=to.name
+      }
+    },
+    methods:{
+       getUserInfo(){
+         if(localStorage.getItem('userInfo')){
+          this.userInfo =JSON.parse(localStorage.getItem('userInfo')).google.user
+          this.auth = JSON.parse(localStorage.getItem('userInfo')).google.auth
+          
+        }
+      },
+      logout(){
+        localStorage.setItem('userInfo',[])
+        this.userInfo=[]
+        this.auth=[]
       }
     }
 }

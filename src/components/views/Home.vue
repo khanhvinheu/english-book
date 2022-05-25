@@ -1,5 +1,5 @@
 <template>
-    <div class="main__home">
+    <div class="main__home">      
         <div class="main__slide">
             <SlideBarComponent :data="slide"/>
         </div>
@@ -12,9 +12,7 @@
         <el-divider content-position="left">
             <span class="course__title">Sách tiếng anh mới nhất <el-button type="success" size="small" round>Mới</el-button></span>
         </el-divider>
-        <div class="main__slide">
-
-        </div>
+     
     </div>
 </template>
 <script>
@@ -24,10 +22,11 @@
         components: {
             SlideBarComponent,CardItemComponent
         },
-        mounted() {
+        mounted() {        
+           
         },
         data() {
-            return {
+            return {               
                 slide: [
                     {
                         title: 'Khóa học tiếng anh giao tiếp cơ bản',

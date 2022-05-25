@@ -44,6 +44,7 @@ export default {
               }
             }
           }
+          localStorage.setItem('userInfo', JSON.stringify(userInfo) )
           // this.$store.commit('setLoginUser', userInfo)
           router.push('/home')
         })

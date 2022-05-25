@@ -109,7 +109,7 @@
     display: none;
 }
 .header__navbar-button-search{
-    display: none;
+    display: none !important;
     margin-right: 10px;
 }
 
@@ -129,6 +129,7 @@
 #header__navbar-input-search{
     border-radius: 20px;
 }
+
 .header__navbar-button-search-show:checked ~  .nav__overlay-search{
     display: block;
 }
@@ -179,7 +180,7 @@
     .header__button-show,
     .header__navbar-button-notification ,
     .header__navbar-button-search{
-        display: block;
+        display: block !important;
     }
     .header__navbar-logo-mobile{
         display: flex;
