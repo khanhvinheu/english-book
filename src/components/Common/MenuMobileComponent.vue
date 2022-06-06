@@ -5,8 +5,8 @@
           <div class="header__nav-mobile">
             <label for="check__show-nav" class="header__button-close">
               <div class="header__navbar-logo-mobile">            
-                <el-avatar shape="square"  :size="40"  class="header__navbar-logo-img" fit="fill" src="./img/logo.png" />
-                <span class="header__naver-logo-title">English-Book</span>
+                <el-avatar shape="square"  :size="40"  class="header__navbar-logo-img" fit="fill" :src="$appSetting.LOGO_APP"/>
+                <span class="header__naver-logo-title">{{$appSetting.NAME_APP}}</span>
               </div>
               <el-icon style="font-size: 25px;" class="close__btn"><close-bold /></el-icon>
             </label>

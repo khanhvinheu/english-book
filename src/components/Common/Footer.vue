@@ -7,10 +7,10 @@
             shape="square"
             :size="40"
             fit="fill"
-            src="./img/logo.png" 
+            :src="$appSetting.LOGO_APP"
             id="logo__footer"         
           />
-          <h3 class="footer__top_list-title">English Book</h3>
+          <h3 class="footer__top_list-title">{{$appSetting.NAME_APP}}</h3>
         </li>
         <li class="footer__top-lits-item">Điện thoại: 0868.350.979</li>
         <li class="footer__top-lits-item">Email: vinh.khanhdu@gmail.com</li>
@@ -20,7 +20,7 @@
     <div class="footer__top-item">
       <ul class="footer__top-list">
         <li class="footer__top-lits-item">
-          <h3 class="footer__top_list-title">Về English-Book</h3>
+          <h3 class="footer__top_list-title">Về {{$appSetting.NAME_APP}}</h3>
         </li>
         <li class="footer__top-lits-item">Giới thiệu</li>
         <li class="footer__top-lits-item">Cơ hội</li>
@@ -40,7 +40,7 @@
     <div class="footer__top-item">
       <ul class="footer__top-list">
         <li class="footer__top-lits-item">
-          <h3 class="footer__top_list-title">Website English-Book</h3>
+          <h3 class="footer__top_list-title">Website {{$appSetting.NAME_APP}}</h3>
         </li>
         <li class="footer__top-lits-item">Ngày bắt đầu: 20/4/2022</li>
         <li class="footer__top-lits-item">Lĩnh vực: Học tập</li>

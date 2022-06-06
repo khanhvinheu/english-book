@@ -3,7 +3,7 @@
         <div class="background__page"></div>
           <div class="main__login">
             <div class="title__login-box">
-              <el-avatar  :size="130"  class="login-logo-img" fit="fill" src="./img/logo_new.png" />
+              <el-avatar  :size="130"  class="login-logo-img" fit="fill" :src="$appSetting.LOGO_APP" />
             </div>
             <div class="input__box">
               <el-input

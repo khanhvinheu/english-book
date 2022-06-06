@@ -1,8 +1,8 @@
 <template>
     <nav class="header__navbar">
         <div class="header__navbar-logo">        
-          <el-avatar shape="square"  :size="40"  class="header__navbar-logo-img" fit="fill" src="./img/logo.png" />
-          <span class="header__naver-logo-title">English-Book</span>
+          <el-avatar shape="square"  :size="40"  class="header__navbar-logo-img" fit="fill" :src="$appSetting.LOGO_APP" />
+          <span class="header__naver-logo-title">{{$appSetting.NAME_APP}}</span>
         </div>
         <div class="header__button-navbar">
           <MenuMobileComponentVue :activeMenu="activeMenu"/>
