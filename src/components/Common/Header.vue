@@ -1,7 +1,7 @@
 <template>
     <nav class="header__navbar">
         <div class="header__navbar-logo">        
-          <el-avatar shape="square"  :size="40"  class="header__navbar-logo-img" fit="fill" :src="$appSetting.LOGO_APP" />
+          <el-avatar shape="square"  :size="60"  class="header__navbar-logo-img" fit="fill" :src="$appSetting.LOGO_APP" />
           <span class="header__naver-logo-title">{{$appSetting.NAME_APP}}</span>
         </div>
         <div class="header__button-navbar">
@@ -17,14 +17,15 @@
           />
         </div>
         <div class="header__navbar-button" style="display: flex; align-items: center;">       
-          <el-button class="header__navbar-button-login" v-show="userInfo.length==0" style="background-color:#f05123; color: #ffffff; border: #f05123;" @click='$router.push({path: "/login"})' round>Đăng nhập</el-button>  
-              <el-popover               
+            <label for="checkbox__search"><el-icon class="header__navbar-button-search" style="font-size: 24px;"><search/></el-icon></label>            
+            <el-button class="header__navbar-button-login" v-show="userInfo.length==0" style="background-color:#f05123; color: #ffffff; border: #f05123;" @click='$router.push({path: "/login"})' round>Đăng nhập</el-button>  
+            <el-popover               
                     placement="bottom"                   
                     :width="250"
                     trigger="click"
                     >
               <template #reference >               
-                   <el-icon class="header__navbar-button-login" v-show="userInfo.length !=0" style="font-size: 26px; color: #f05123;"><Avatar /></el-icon>               
+                   <el-icon class="header__navbar-button-login" v-show="userInfo.length !=0" style="font-size: 26px;"><Avatar /></el-icon>               
               </template>
               <div v-show="userInfo.length !=0"  class="popup-userinfo" style="display: flex;justify-content: center; flex-wrap: wrap;">
                 <el-avatar size="large" referrerpolicy="no-referrer" :src="userInfo.profileImage"/>                   
@@ -37,9 +38,8 @@
             </el-popover>
 
 
-          <label for="checkbox__search"><el-icon class="header__navbar-button-search" style="font-size: 24px;"><search/></el-icon></label>
 
-            <el-popover
+            <!-- <el-popover
                     placement="bottom"
                     title="Notification"
                     :width="200"
@@ -50,7 +50,7 @@
                   <el-icon style="font-size: 25px;"><bell-filled/></el-icon>
                 </el-badge>
               </template>
-            </el-popover>
+            </el-popover> -->
           <!-- Search Mobile -->
           <input type="checkbox" hidden id="checkbox__search" class="header__navbar-button-search-show">
           <label for="checkbox__search" class="nav__overlay-search"></label>

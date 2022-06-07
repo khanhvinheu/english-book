@@ -1,7 +1,7 @@
 <template>
   <div class="upload-container">
     <el-button :style="{background:color,borderColor:color}" size="mini" type="primary" @click="showDialog">    
-      Add Image
+      +
     </el-button>
     <el-dialog v-model="dialogVisible">
       <el-upload

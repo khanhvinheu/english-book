@@ -93,6 +93,9 @@ export default {
     this.init()
     this.onResize()
     window.addEventListener('resize', this.onResize, { passive: true })
+    if(this.isMobile){
+      this.toolbar =[]
+    }
   },
   activated() {
     if (window.tinymce) {

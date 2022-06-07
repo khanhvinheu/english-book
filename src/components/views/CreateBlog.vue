@@ -3,7 +3,6 @@
     <el-skeleton     
       :loading="loading"
       animated
-
     >
       <template #template>
         <el-skeleton-item variant="h3" style="width: 20%; height: 40px;" />          
@@ -12,23 +11,30 @@
         <el-skeleton-item variant="text" style="width: 100%; height: 40px;" />
         <el-skeleton-item variant="text" style="width:100%; height: 440px" />
       </template>
-      <template #default>
-          <div v-show="!loading">
-            <h1>Tạo mới bài viết</h1>  
-            <div class="title__blog box-shadow">
-                <el-input></el-input>
-            </div>
-            <div class="title__blog box-shadow">
-                <el-input></el-input>
-            </div>
-            <div class="title__blog box-shadow">
-                <el-input></el-input>
-            </div>
-        
-            <div class="box-shadow">
-                <Editor/>
-            </div>              
-          </div>
+      <template #default>      
+          <div class="title__blog box-shadow">
+              <h2>TẠO MỚI BÀI VIẾT</h2>
+          </div>    
+
+          <el-form label-position="top" label-width="120px" class="title__blog box-shadow">
+            <el-form-item label="Tiêu đề bài viết">
+                <el-input  />
+            </el-form-item>
+            <el-form-item label="Danh mục">
+                <el-input  />
+            </el-form-item>
+            <el-form-item label="Chủ để">
+                <el-input  />
+            </el-form-item>
+            <el-form-item label="Nội dung">
+                <Editor width="100%"/>
+            </el-form-item>
+           
+            <el-form-item>
+                <el-button type="primary">Tạo mới bài viết</el-button>
+                <el-button>Thoát</el-button>
+            </el-form-item>
+        </el-form>
       </template>
     </el-skeleton>   
       
