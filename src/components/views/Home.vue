@@ -4,13 +4,13 @@
             <SlideBarComponent :data="slide"/>
         </div>
         <el-divider content-position="left">
-            <span class="course__title">Các khóa học tiếng anh cơ bản <el-button type="primary" size="small" round>Mới</el-button></span>
+            <span class="course__title">What is Lorem Ipsum? <el-button type="primary" size="small" round>New</el-button></span>
         </el-divider>
         <div class="cards">
             <CardItemComponent :data="course"/>
         </div>
         <el-divider content-position="left">
-            <span class="course__title">Sách tiếng anh mới nhất <el-button type="success" size="small" round>Mới</el-button></span>
+            <span class="course__title">What is Lorem Ipsum? <el-button type="success" size="small" round>New</el-button></span>
         </el-divider>
      
     </div>
@@ -26,61 +26,86 @@
            
         },
         data() {
-            return {               
+            return {   
+                imgNotFound:'https://bitsofco.de/content/images/2018/12/Screenshot-2018-12-16-at-21.06.29.png',            
                 slide: [
                     {
-                        title: 'Khóa học tiếng anh giao tiếp cơ bản',
+                        title: 'What is Lorem Ipsum?',
                         background: 'linear-gradient(to right, rgb(254, 33, 94), rgb(255, 148, 2))',
                         color: '#ffffff',
-                        titleButton: 'Đăng ký ngay',
+                        titleButton: 'Register Now',
                         img: './img/baner1.png'
                     },
                     {
-                        title: 'Khóa học tiếng anh giao tiếp cơ bản',
+                        title: 'What is Lorem Ipsum?',
                         background: 'linear-gradient(to right, rgb(0, 126, 254), rgb(6, 195, 254))',
                         color: '#ffffff',
-                        titleButton: 'Đăng ký ngay',
+                        titleButton: 'Register Now',
                         img: './img/baner2.png'
                     },
                     {
-                        title: 'Khóa học tiếng anh giao tiếp cơ bản',
+                        title: 'What is Lorem Ipsum?',
                         background: 'linear-gradient(to right, rgb(0, 126, 254), rgb(6, 195, 254))',
                         color: '#ffffff',
-                        titleButton: 'Đăng ký ngay',
+                        titleButton: 'Register Now',
                         img: './img/baner3.png'
                     },
                     {
-                        title: 'Khóa học tiếng anh giao tiếp cơ bản',
+                        title: 'What is Lorem Ipsum?',
                         background: 'linear-gradient(to right, rgb(40, 119, 250), rgb(103, 23, 205))',
                         color: '#ffffff',
-                        titleButton: 'Đăng ký ngay',
+                        titleButton: 'Register Now',
                         img: './img/banner_4.png'
                     }
                 ],
                 course: [
                     {
-                        title: 'Kiến thức nền tảng',
-                        background: 'https://files.fullstack.edu.vn/f8-prod/courses/7.png',
+                        title: 'What is Lorem Ipsum?',
+                        background: 'https://files.fullstack.edu.vn/f8-prod/courses/7.png',                       
                         color: '#ffffff',
-                        titleButton: 'Đăng ký ngay'
+                        titleButton: 'Register Now'
                     },
                     {
-                        title: 'Luyện nghe tiếng anh',
-                        background: 'https://files.fullstack.edu.vn/f8-prod/courses/7.png',
+                        title: 'What is Lorem Ipsum?',
+                        background: 'https://files.fullstack.edu.vn/f8-prod/courses/7.png',                     
                         color: '#ffffff',
-                        titleButton: 'Đăng ký ngay'
+                        titleButton: 'Register Now'
                     },
                     {
-                        title: 'Luyện đọc',
-                        background: 'https://files.fullstack.edu.vn/f8-prod/courses/7.png',
+                        title: 'What is Lorem Ipsum?',
+                        background: 'https://files.fullstack.edu.vn/f8-prod/courses/7.png',                      
                         color: '#ffffff',
-                        titleButton: 'Đăng ký ngay'
+                        titleButton: 'Register Now'
                     },
                     {
-                        title: 'Luyện đọc',
-                        background: 'https://files.fullstack.edu.vn/f8-prod/courses/7.png',
+                        title: 'What is Lorem Ipsum?',
+                        background: 'https://files.fullstack.edu.vn/f8-prod/courses/7.png',                       
                         color: '#ffffff',
-                        titleButton: 'Đăng ký ngay'
+                        titleButton: 'Register Now'
+                    },
+                    {
+                        title: 'What is Lorem Ipsum?',
+                        background: 'https://files.fullstack.edu.vn/f8-prod/courses/7.png',                       
+                        color: '#ffffff',
+                        titleButton: 'Register Now'
+                    },
+                    {
+                        title: 'What is Lorem Ipsum?',
+                        background: 'https://files.fullstack.edu.vn/f8-prod/courses/7.png',                       
+                        color: '#ffffff',
+                        titleButton: 'Register Now'
+                    },
+                    {
+                        title: 'What is Lorem Ipsum?',
+                        background: 'https://files.fullstack.edu.vn/f8-prod/courses/7.png',                       
+                        color: '#ffffff',
+                        titleButton: 'Register Now'
+                    },
+                    {
+                        title: 'What is Lorem Ipsum?',
+                        background: 'https://files.fullstack.edu.vn/f8-prod/courses/7.png',                       
+                        color: '#ffffff',
+                        titleButton: 'Register Now'
                     },
 
                 ]

@@ -1,41 +1,27 @@
 <template>
   <nav class="navbar__menu">
-    <ul class="navbar__menu-list">
-      <li class="navbar__menu-item" style="margin-bottom: 10px">
+    <ul class="navbar__menu-list" v-for="item in itemMenu">    
+      <li class="navbar__menu-item">              
+        <button v-if="!item.circle" id="btn-menu" :class=' { "active": activeMenu == item.activeMenu} ' @click='$router.push({path: item.path})'>     
+          <ion-icon style="font-size: 25px" :name="item.icon"></ion-icon>
+          <p style="font-size: 10px; margin: 0">{{item.title}}</p>
+        </button> 
         <el-tooltip
                 class="box-item"
                 effect="dark"
                 content="Tạo blog mới"
                 placement="right-start"
-        >         
-          <el-button type="primary" style="width: 50px; height: 50px; color: #ffffff;" @click='$router.push({path: "/create-blog"})' :icon="icon.Plus" circle />
+        >  
+        <el-button v-if="item.circle" type="primary" style="width: 50px; height: 50px; color: #ffffff;margin-bottom: 10px;" @click='$router.push({path: "/create-blog"})' :icon="icon.Plus" circle />
+       </el-tooltip>
+        <el-tooltip               
+                class="box-item"
+                effect="dark"
+                content="Tạo blog mới"
+                placement="right-start"
+        >  
         </el-tooltip>
-
-      </li>
-      <li class="navbar__menu-item">
-        <button id="btn-menu" :class=' { "active": activeMenu == "Home" } ' @click='$router.push({path: "/"})' >
-          <el-icon style="font-size: 25px"><home-filled /></el-icon>
-          <p style="font-size: 10px; margin: 0">Trang chủ</p>
-        </button>
-      </li>
-      <li class="navbar__menu-item">
-        <button id="btn-menu" :class=' { "active": activeMenu == "Book" } ' @click='$router.push({path: "/book"})' >
-          <el-icon style="font-size: 25px"><notebook /></el-icon>
-          <p style="font-size: 10px; margin: 0">Sách</p>
-        </button>
-      </li>
-      <li class="navbar__menu-item">
-        <button id="btn-menu" :class=' { "active": activeMenu == "Video" } ' @click='$router.push({path: "/video"})'>
-          <el-icon style="font-size: 25px"><video-camera /></el-icon>
-          <p style="font-size: 10px; margin: 0">Video</p>
-        </button>
-      </li>
-      <li class="navbar__menu-item">
-        <button id="btn-menu" :class=' { "active": activeMenu == "Course"} ' @click='$router.push({path: "/course"})'>
-          <el-icon style="font-size: 25px"><trend-charts /></el-icon>
-          <p style="font-size: 10px; margin: 0">Khóa học</p>
-        </button>
-      </li>
+      </li> 
     </ul>
   </nav>
 </template>
@@ -62,7 +48,46 @@ export default {
     props:['activeMenu'],
     data(){
       return{
-        icon:{Plus}
+        icon:{Plus},
+        itemMenu:[
+          {
+            title:'Blog',
+            activeMenu:'Home',
+            path:'/',
+            icon:'home',
+            circle:true
+          },
+          {
+            title:'Home',
+            activeMenu:'Home',
+            path:'/',
+            icon:'home'
+          },
+          {
+            title:'Book',
+            activeMenu:'Book',
+            path:'/book',
+            icon:'book'
+          },
+          {
+            title:'Video',
+            activeMenu:'Video',
+            path:'/video',
+            icon:'film-outline'
+          },
+          {
+            title:'Course',
+            activeMenu:'Course',
+            path:'/course',
+            icon:'pulse-outline'
+          },
+          {
+            title:'Blog post',
+            activeMenu:'Blog',
+            path:'/blog',
+            icon:'people-outline'
+          },
+        ]
         
       }
     },
