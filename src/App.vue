@@ -1,5 +1,5 @@
 <template>
-  <div id="app">
+  <div id="app">    
     <Transition duration="750" name="slide-fade">
     <router-view/>
     </Transition>

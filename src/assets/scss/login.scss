@@ -1,10 +1,11 @@
-.container{
+.container__login{
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
   background-image: url("../img/backgound_login.jpg");
   background-repeat: no-repeat;
+  background-size: cover;
   background-position: center;
 }
 .background__page{

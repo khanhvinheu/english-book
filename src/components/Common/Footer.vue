@@ -50,7 +50,7 @@
   </div>
   <div class="footer__bottom">
     <span>
-      © 2022 Book-Shop Nơi học tập và chia sẻ.
+      {{$appSetting.FOOTER_APP}}
     </span>
       <div class="icon_footer">
         <ion-icon name="logo-youtube" class="icon_footer-item"></ion-icon> 

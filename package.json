@@ -8,10 +8,13 @@
   },
   "dependencies": {
     "@element-plus/icons-vue": "^1.1.4",
+    "@unocss/preset-icons": "^0.45.15",
+    "@vueuse/core": "^9.1.1",
     "element-plus": "^2.1.9",
     "element-ui": "^2.15.8",
     "fb": "^2.0.0",
     "qs": "^6.10.3",
+    "unplugin-vue-components": "^0.22.4",
     "vue": "^3.2.31",
     "vue-comment-grid": "^1.0.12",
     "vue-facebook": "^1.1.0",
@@ -19,10 +22,11 @@
     "vue3-carousel": "^0.1.38"
   },
   "devDependencies": {
+    "@iconify/json": "^2.1.103",
     "@vitejs/plugin-vue": "^2.3.1",
     "sass": "^1.51.0",
+    "unocss": "^0.34.1",
     "unplugin-auto-import": "^0.7.1",
-    "unplugin-vue-components": "^0.19.3",
     "vite": "^2.9.1"
   }
 }

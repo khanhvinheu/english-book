@@ -1,13 +1,13 @@
 <template>
     <nav class="header__navbar">
-        <div class="header__navbar-logo">        
+        <div class="header__navbar-logo">
           <el-avatar shape="square"  :size="60"  class="header__navbar-logo-img" fit="fill" :src="$appSetting.LOGO_APP" />
           <span class="header__naver-logo-title">{{$appSetting.NAME_APP}}</span>
         </div>
         <div class="header__button-navbar">
           <MenuMobileComponentVue :activeMenu="activeMenu"/>
         </div>
-        <div class="header__navbar-search">        
+        <div class="header__navbar-search">
            <el-input
             v-model="input_search"
             id="header__navbar-input-search"
@@ -16,26 +16,38 @@
              :prefix-icon="Search"
           />
         </div>
-        <div class="header__navbar-button" style="display: flex; align-items: center;">       
-            <label for="checkbox__search"><el-icon class="header__navbar-button-search" style="font-size: 24px;"><search/></el-icon></label>            
-            <el-button class="header__navbar-button-login" v-show="userInfo.length==0" style="background-color:#f05123; color: #ffffff; border: #f05123;" @click='$router.push({path: "/login"})' round>Đăng nhập</el-button>  
-            <el-popover               
-                    placement="bottom"                   
+        <div class="header__navbar-logo-mobile">
+              <el-avatar shape="square"  :size="60"  class="header__navbar-logo-img" fit="fill" :src="$appSetting.LOGO_APP" />
+              <span class="header__naver-logo-title">{{$appSetting.NAME_APP}}</span>
+        </div>
+
+        <div class="header__navbar-button" style="display: flex; align-items: center;">
+            <el-button @click="toggle($event)" class="border-none w-full bg-transparent cursor-pointer" style="height: var(--ep-menu-item-height);border-radius: 50px;margin-right: 10px">
+                <ion-icon style="font-size: 20px ; padding-right: 5px" :name="DarkMode?'moon-outline':'sunny-outline'"></ion-icon>
+                <span>{{DarkMode?'Dark':'Light'}}</span>
+            </el-button>
+            <label for="checkbox__search"><el-icon class="header__navbar-button-search" style="font-size: 24px;"><search/></el-icon></label>
+
+            <el-button class="header__navbar-button-login" v-show="userInfo.length==0" style="background-color:#f05123; color: #ffffff; border: #f05123;height: 40px" @click='$router.push({path: "/login"})' round>Đăng nhập</el-button>
+
+            <el-popover
+                    placement="bottom"
                     :width="250"
                     trigger="click"
                     >
-              <template #reference >               
-                   <el-icon class="header__navbar-button-login" v-show="userInfo.length !=0" style="font-size: 26px;"><Avatar /></el-icon>               
+              <template #reference >
+                   <el-icon class="header__navbar-button-login" v-show="userInfo.length !=0" style="font-size: 26px;"><Avatar /></el-icon>
               </template>
               <div v-show="userInfo.length !=0"  class="popup-userinfo" style="display: flex;justify-content: center; flex-wrap: wrap;">
-                <el-avatar size="large" referrerpolicy="no-referrer" :src="userInfo.profileImage"/>                   
+                <el-avatar size="large" referrerpolicy="no-referrer" :src="userInfo.profileImage"/>
               </div>
               <div  v-show="userInfo.length !=0" style="display: flex;justify-content: center; flex-wrap: wrap;">
-                 <span style="margin-top:10px">Xin chào: {{userInfo.name}}</span>     
+                 <span style="margin-top:10px">Xin chào: {{userInfo.name}}</span>
                 <el-button link @click="logout">Đăng xuất</el-button>
               </div>
-              
+
             </el-popover>
+
 
 
 
@@ -56,7 +68,7 @@
           <label for="checkbox__search" class="nav__overlay-search"></label>
           <div class="header__nav-mobile-search">
             <label for="checkbox__search" class="header__button-close">
-              <div class="header__navbar-logo-mobile">               
+              <div class="header__navbar-logo-mobile">
                 <el-avatar shape="square"  :size="40"  class="header__navbar-logo-img" fit="fill" src="./img/logo.png" />
                 <span class="header__naver-logo-title">English-Book</span>
               </div>
@@ -91,6 +103,12 @@ import {
   Plus,
   HomeFilled,Notebook,VideoCamera,TrendCharts,Search,CloseBold,Expand,BellFilled, Avatar,DArrowRight
 } from "@element-plus/icons-vue";
+// import { toggleDark } from '../../composables';
+import { useDark, useToggle } from '@vueuse/core'
+
+const isDark = useDark()
+const toggleDark = useToggle(isDark)
+
 import MenuMobileComponentVue from "./MenuMobileComponent.vue";
 import { ref } from 'vue'
 export default {
@@ -111,23 +129,28 @@ export default {
             input_search:'',
             selected:'',
             userInfo:[],
-            auth:[]
+            auth:[],
+            DarkMode:''
         }
     },
     mounted(){
-     this.getUserInfo()
+        this.DarkMode = isDark.value
+        this.getUserInfo()
     },
     watch:{
       $route( to,from){
         this.selected=to.name
-      }
+      },
     },
     methods:{
+      toggle(val){
+          toggleDark()
+          this.DarkMode = isDark._value
+      },
        getUserInfo(){
          if(localStorage.getItem('userInfo')){
           this.userInfo =JSON.parse(localStorage.getItem('userInfo')).google.user
           this.auth = JSON.parse(localStorage.getItem('userInfo')).google.auth
-          
         }
       },
       logout(){

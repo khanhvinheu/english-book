@@ -1,5 +1,5 @@
 <template>
-      <div class="container">
+      <div class="container__login" v-bind:style="{'background-image':$appSetting.BACKGROUND_IMAGE[$appSetting.THEME]}">       
         <div class="background__page"></div>
           <div class="main__login">
             <div class="title__login-box">
@@ -43,7 +43,7 @@ export default {
     UserFilled,Key
   },
   data(){
-    return{
+    return{     
       icon:{
         UserFilled,Key
       },
@@ -52,6 +52,8 @@ export default {
         password:''
       }
     }
+  },
+  methods:{ 
   }
 }
 </script>

@@ -1,4 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router'
+import appSetting from '../config/appSetting';
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -57,5 +58,16 @@ const router = createRouter({
 
   ]
 })
+const DEFAULT_TITLE = appSetting.NAME_APP;
+router.beforeEach((to) => {
+  document.title = to.meta.title || DEFAULT_TITLE + ' - '+to.name;  
+});
+(function() {
+  var link = document.querySelector("link[rel*='icon']") || document.createElement('link');
+  link.type = 'image/x-icon';
+  link.rel = 'shortcut icon';
+  link.href = appSetting.LOGO_APP;
+  document.getElementsByTagName('head')[0].appendChild(link);
+})();
 
 export default router

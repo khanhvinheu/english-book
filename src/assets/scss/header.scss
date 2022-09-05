@@ -3,9 +3,13 @@
     display: flex;
     align-items: center;
 }
+.header__navbar-logo-mobile{        
+   display: none;
+}
 .header__navbar-logo-img{
     /*box-shadow: rgb(100 100 111 / 20%) 0px 7px 29px 0px;*/
 }
+
 .header__navbar{
     display: flex;
     justify-content: space-between;
@@ -181,7 +185,7 @@
     }
     .header__button-navbar,
     .header__button-show,
-    .header__navbar-button-notification ,
+    .header__navbar-button-notification ,    
     .header__navbar-button-search{
         display: block !important;
     }
@@ -209,7 +213,9 @@
         -webkit-transform:rotate(720deg);
         transform:rotate(720deg); /* How many times it'll rotate = degrees÷360 */
     }
-    .header{
-        padding-top: 19px;
+
+    .header__navbar-logo-mobile{
+        display: flex;
     }
+   
 }
