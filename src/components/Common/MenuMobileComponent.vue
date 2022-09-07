@@ -1,6 +1,6 @@
 <template>
-        <label for="check__show-nav" class="header__button-show">
-         <el-icon style="font-size: 25px;"><expand /></el-icon></label>
+        <!-- <label for="check__show-nav" class="header__button-show">
+         <el-icon style="font-size: 25px;"><expand /></el-icon></label> -->
           <input name="" hidden class="bt-show" id="check__show-nav" type="checkbox">
           <div class="header__nav-mobile">
             <label for="check__show-nav" class="header__button-close">

@@ -4,6 +4,10 @@
           <el-avatar shape="square"  :size="60"  class="header__navbar-logo-img" fit="fill" :src="$appSetting.LOGO_APP" />
           <span class="header__naver-logo-title">{{$appSetting.NAME_APP}}</span>
         </div>
+        <div class="header__navbar-logo-mobile">
+              <el-avatar shape="square"  :size="60"  class="header__navbar-logo-img" fit="fill" :src="$appSetting.LOGO_APP" />
+              <span class="header__naver-logo-title">{{$appSetting.NAME_APP}}</span>
+        </div>
         <div class="header__button-navbar">
           <MenuMobileComponentVue :activeMenu="activeMenu"/>
         </div>
@@ -15,17 +19,21 @@
             placeholder="Tìm kiếm khóa học, bài viết, video...."
              :prefix-icon="Search"
           />
-        </div>
-        <div class="header__navbar-logo-mobile">
-              <el-avatar shape="square"  :size="60"  class="header__navbar-logo-img" fit="fill" :src="$appSetting.LOGO_APP" />
-              <span class="header__naver-logo-title">{{$appSetting.NAME_APP}}</span>
-        </div>
+        </div>      
 
         <div class="header__navbar-button" style="display: flex; align-items: center;">
-            <el-button @click="toggle($event)" class="border-none w-full bg-transparent cursor-pointer" style="height: var(--ep-menu-item-height);border-radius: 50px;margin-right: 10px">
+            <!-- <el-button @click="toggle($event)" class="border-none w-full bg-transparent cursor-pointer" style="height: var(--ep-menu-item-height);border-radius: 50px;margin-right: 10px">
                 <ion-icon style="font-size: 20px ; padding-right: 5px" :name="DarkMode?'moon-outline':'sunny-outline'"></ion-icon>
                 <span>{{DarkMode?'Dark':'Light'}}</span>
-            </el-button>
+            </el-button> -->
+            <el-switch
+             @click="toggle($event)"
+              v-model="DarkMode"              
+              inline-prompt
+              style="--el-switch-on-color: #fff; --el-switch-off-color: #000"
+              :active-icon="icon.Moon"
+              :inactive-icon="icon.Sunny"
+            />
             <label for="checkbox__search"><el-icon class="header__navbar-button-search" style="font-size: 24px;"><search/></el-icon></label>
 
             <el-button class="header__navbar-button-login" v-show="userInfo.length==0" style="background-color:#f05123; color: #ffffff; border: #f05123;height: 40px" @click='$router.push({path: "/login"})' round>Đăng nhập</el-button>
@@ -88,6 +96,8 @@
             </ul>
           </div>
         </div>
+         <label for="check__show-nav" class="header__button-show">
+         <el-icon style="font-size: 25px;"><expand /></el-icon></label>
       </nav>
 </template>
 <style>
@@ -96,12 +106,14 @@
 </style>
 <script>
 import {
+  Moon,
+  Check, Close,
   Document,
   Menu as IconMenu,
   Location,
   Setting,
   Plus,
-  HomeFilled,Notebook,VideoCamera,TrendCharts,Search,CloseBold,Expand,BellFilled, Avatar,DArrowRight
+  HomeFilled,Notebook,VideoCamera,TrendCharts,Search,CloseBold,Expand,BellFilled, Avatar,DArrowRight,Sunny
 } from "@element-plus/icons-vue";
 // import { toggleDark } from '../../composables';
 import { useDark, useToggle } from '@vueuse/core'
@@ -118,13 +130,14 @@ export default {
         Setting,
         IconMenu,
         Plus,
-        HomeFilled,Notebook,VideoCamera,TrendCharts,Search,CloseBold,Expand,BellFilled,Avatar,MenuMobileComponentVue,DArrowRight
+        Check, Close,
+        HomeFilled,Notebook,VideoCamera,TrendCharts,Search,CloseBold,Expand,BellFilled,Avatar,MenuMobileComponentVue,DArrowRight,Moon,Sunny 
     },
     props:['activeMenu'],
     data(){
         return{
             icon:{
-              Document,Avatar
+              Document,Avatar,Check, Close,Moon,Sunny
             },
             input_search:'',
             selected:'',
