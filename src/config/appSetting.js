@@ -1,4 +1,4 @@
-const THEME = 'premium'
+const THEME = 'default'
 const NAME_APP ='VMStore'
 const LOGO_APP ='./img/logo_new.png'
 const FOOTER_APP ='© 2022 '+NAME_APP+' nơi học tập và chia sẻ.'
