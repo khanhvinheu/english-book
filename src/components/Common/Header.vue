@@ -38,10 +38,12 @@
           
             <label for="checkbox__search"><el-icon class="header__navbar-button-search" style="font-size: 24px;margin-left: 10px;"><search/></el-icon></label>
             <el-button class="header__navbar-button-login" v-show="userInfo.length==0" size="large" 
-              style="background-color:#f05123; color: #ffffff; border: #f05123; margin-left:10px" 
-              @click='$router.push({path: "/login"})' round>Đăng nhập</el-button>
+              style="background-color:#f05123; color: #ffffff; border: #f05123; margin-left:10px;" 
+              @click='$router.push({path: "/login"})' round>
+              <el-icon style="font-size: 20px;"><Avatar /></el-icon>
+            </el-button>
 
-            <el-popover
+            <!-- <el-popover
                     placement="bottom"
                     :width="250"
                     trigger="click"
@@ -56,7 +58,7 @@
                  <span style="margin-top:10px">Xin chào: {{userInfo.name}}</span>
                 <el-button link @click="logout">Đăng xuất</el-button>
               </div>
-            </el-popover>
+            </el-popover> -->
           <input type="checkbox" hidden id="checkbox__search" class="header__navbar-button-search-show">
           <label for="checkbox__search" class="nav__overlay-search"></label>
           <div class="header__nav-mobile-search">
