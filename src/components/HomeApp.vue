@@ -12,11 +12,11 @@
           <div class="menu">
             <LeftMenu :activeMenu="activeMenu" />
           </div>
-          <div class="main">            
-          <!-- <el-avatar v-show="img" size="large" referrerpolicy="no-referrer" :src="img"/>  
+          <div class="main">
+          <!-- <el-avatar v-show="img" size="large" referrerpolicy="no-referrer" :src="img"/>
            <h3 v-show="name">Hello: {{name}}</h3>   -->
-            <Transition duration="550" name="nested">        
-                    
+            <Transition duration="550" name="nested">
+
               <RouterView />
             </Transition>
           </div>
@@ -27,12 +27,12 @@
           <ion-icon name="arrow-up-outline"></ion-icon>
         </a>
       </ScrollTopComponent>
-    </div>   
+    </div>
     <div class="menu__bottom_mobile" v-if="visibleMenu">
       <MenuBottomMobile/>
 
-    </div> 
-    
+    </div>
+
     <footer class="footer">
       <div class="grid">
         <Footer/>
@@ -65,7 +65,7 @@ export default {
       visibleMenu: false
     }
   },
-   mounted(){      
+   mounted(){
         window.addEventListener('scroll', this.scrollListener)
         //  setTimeout(()=>{
         //      console.log(this.$gAuth.GoogleAuth.currentUser.tb.Lu)
@@ -73,7 +73,7 @@ export default {
         //      this.name = this.$gAuth.GoogleAuth.currentUser.tb.Lu.tf
         //      localStorage.setItem('item',JSON.stringify(this.$gAuth.GoogleAuth.currentUser.tb.Lu))
         //  },1500)
-        
+
         // START NEW CODE
         // auth2.currentUser.listen(function(googleUser) {
         //     if (googleUser && (gProfile = googleUser.getBasicProfile())) {
@@ -86,27 +86,27 @@ export default {
         // });
         // END NEW CODE
 
-  
+
   },
   methods:{
     scrollListener: function (e) {
-      this.visibleMenu = window.scrollY > 150 && window.scrollY< (window.screen.height-200)
-    
+      this.visibleMenu = window.scrollY< (window.screen.height-200)
+
     }
-    
+
   },
   beforeDestroy: function () {
     window.removeEventListener('scroll', this.scrollListener)
   },
   created(){
       this.activeMenu = this.$route.name
-  },  
+  },
   watch:{
-    $route(to,from){   
+    $route(to,from){
       this.activeMenu = to.name
       this.loading = true
       setTimeout(()=>{
-      this.loading = false      
+      this.loading = false
     },1000)
     }
   }
