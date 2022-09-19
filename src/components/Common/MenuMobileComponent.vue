@@ -4,7 +4,7 @@
           <input name="" hidden class="bt-show" id="check__show-nav" type="checkbox">
           <div class="header__nav-mobile">
             <label for="check__show-nav" class="header__button-close">
-              <div class="header__navbar-logo-mobile">            
+              <div class="header__navbar-logo-mobile">
                 <el-avatar shape="square"  :size="40"  class="header__navbar-logo-img" fit="fill" :src="$appSetting.LOGO_APP"/>
                 <span class="header__naver-logo-title">{{$appSetting.NAME_APP}}</span>
               </div>
@@ -13,6 +13,9 @@
             <div class="box__user-mobile">
               <ul class="header__nav-mobile-list">
               <!-- <li class="header__nav-mobile-item"  @click='$router.push({path: "/login"})'><el-icon style="font-size: 25px;"><avatar /></el-icon><span class="mobile__item-title">Đăng nhập</span></li> -->
+              <li class="header__nav-mobile-item"
+                  :class=' { "active": activeMenu == "Login" } ' @click='$router.push({path: "/login"})'
+              ><ion-icon style="font-size: 25px;" name="person-circle-outline"></ion-icon><span class="mobile__item-title">Đăng nhập</span></li>
               <li class="header__nav-mobile-item"><ion-icon style="font-size: 25px;" name="create-outline"></ion-icon><span class="mobile__item-title">Đăng ký</span></li>
               <li class="header__nav-mobile-item"><ion-icon style="font-size: 25px;" name="settings-outline"></ion-icon><span class="mobile__item-title">Cài đặt hệ thống</span></li>
               </ul>
@@ -24,7 +27,7 @@
               <li class="header__nav-mobile-item" :class=' { "active": activeMenu == "Book"} ' @click='$router.push({path: "/book"})'><el-icon style="font-size: 25px;"><notebook /></el-icon><span class="mobile__item-title">Sách</span></li>
               <li class="header__nav-mobile-item" :class=' { "active": activeMenu == "Video" } ' @click='$router.push({path: "/video"})'><el-icon style="font-size: 25px;"><video-camera /></el-icon><span class="mobile__item-title">Video</span></li>
               <li class="header__nav-mobile-item" :class=' { "active": activeMenu == "Course" } ' @click='$router.push({path: "/course"})'><el-icon style="font-size: 25px;"><trend-charts /></el-icon><span class="mobile__item-title">Khóa học</span></li>
-             
+
               <el-divider />
             </ul>
           </div>
