@@ -50,7 +50,16 @@ menu{
 @media screen and (max-width: 46.1875em) {
     .cards{
         --spacing: 15px;
-        --column: 1;
+        --column: 2;
+    }
+    .card-top, .card-bottom{
+        padding: 8px !important;
+    }
+    .card-image{
+        max-height: 100px;
+    }
+    .card-watching{
+        font-size: 10px !important;
     }
     .menu{
         display: none;

@@ -24,7 +24,9 @@
       </li> 
     </ul>
     <ul>
-      <li><el-switch
+      <li class="navbar__menu-item">
+        <button id="btn-menu"> 
+        <el-switch
               @click="toggle($event)"
                 v-model="DarkMode"              
                 inline-prompt
@@ -32,7 +34,9 @@
                 style="--el-switch-on-color: #fff; --el-switch-off-color: #000;"
                 :active-icon="icon.Moon"
                 :inactive-icon="icon.Sunny"
-              />          </li>
+              />     
+              </button>    
+      </li>
     </ul>
   </nav>
 </template>

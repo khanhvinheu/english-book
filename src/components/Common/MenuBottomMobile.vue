@@ -1,6 +1,5 @@
-<template>
-    <div style="display:flex; justify-content: space-around; align-items: center;height: 40px;">
-      
+<template>    
+    <div style="display:flex; justify-content: space-around; align-items: center;height: 40px;">      
          <div class="item__menu-bottom">
             <el-icon style="font-size: 20px;"><HomeFilled/></el-icon>
             <span>Trang Chủ</span>
@@ -18,8 +17,7 @@
             <div class="item__menu-bottom">
             <el-icon style="font-size: 20px;"><Expand/></el-icon>
             <span> Danh mục</span>
-        </div></label>
-        
+        </div></label>      
     </div>
 </template>
 <script>
@@ -65,6 +63,6 @@ export default {
         border-radius:50px;
         width: 100px;
         height: 50px;
-        top:0px
+        top:0px;
     }
 </style>

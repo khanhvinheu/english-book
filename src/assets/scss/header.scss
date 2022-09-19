@@ -17,11 +17,11 @@
     align-items: center;   
 }
 .header{ 
-    background-color: #ffffff;
+    background-color: rgb(255,255,255,0.95);
     box-shadow: rgb(100 100 111 / 20%) 0px 7px 29px 0px;
     /*border-bottom: 1px solid rgba(236, 226, 226, 0.877) ;*/
   
-    padding: 2px;
+    padding: 12px 15px;
     position: sticky;
     z-index: 20;
     position: -webkit-sticky;
@@ -32,6 +32,8 @@
     transition: transform .5s ease;
     transition: transform .5s ease,-webkit-transform .5s ease;
     will-change: transform;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
 }
 
 .menu__bottom_mobile{
@@ -59,7 +61,7 @@
 }
 
 .dark .header{
-    background-color: #000;
+    background-color: rgb(0,0,0,0.95);
   }
 
 .header__button-show{
@@ -67,8 +69,6 @@
     color: #555;
 }
 .header__naver-logo-title{
-   
-   
     background: linear-gradient(to right, rgb(254, 33, 94), rgb(255, 148, 2));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -233,7 +233,7 @@
     .header__navbar-search,
     .header__navbar-button-login,
     .header__navbar-logo{
-        display: none;
+        display: none !important;
     }
     .header__naver-logo-title{
         font-size: 18px;

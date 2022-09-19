@@ -27,10 +27,12 @@
           <ion-icon name="arrow-up-outline"></ion-icon>
         </a>
       </ScrollTopComponent>
-    </div>
-    <div class="menu__bottom_mobile">
-         <MenuBottomMobile/>
-    </div>
+    </div>   
+    <div class="menu__bottom_mobile" v-if="visibleMenu">
+      <MenuBottomMobile/>
+
+    </div> 
+    
     <footer class="footer">
       <div class="grid">
         <Footer/>
@@ -59,11 +61,12 @@ export default {
       loading:false,
       activeMenu:'',
       img:'',
-      name:''
+      name:'',
+      visibleMenu: false
     }
   },
    mounted(){      
-     
+        window.addEventListener('scroll', this.scrollListener)
         //  setTimeout(()=>{
         //      console.log(this.$gAuth.GoogleAuth.currentUser.tb.Lu)
         //      this.img = this.$gAuth.GoogleAuth.currentUser.tb.Lu.rN
@@ -86,8 +89,14 @@ export default {
   
   },
   methods:{
+    scrollListener: function (e) {
+      this.visibleMenu = window.scrollY > 150 && window.scrollY< (window.screen.height-200)
     
+    }
     
+  },
+  beforeDestroy: function () {
+    window.removeEventListener('scroll', this.scrollListener)
   },
   created(){
       this.activeMenu = this.$route.name

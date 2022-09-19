@@ -6,7 +6,7 @@
           <span class="header__naver-logo-title">{{$appSetting.NAME_APP}}</span>
         </div>
         <div class="header__navbar-logo-mobile">
-              <el-image :src="$appSetting.LOGO_APP" style="width: 50px; height: 50px" />
+              <!-- <el-image :src="$appSetting.LOGO_APP" style="width: 50px; height: 50px" /> -->
               <!-- <el-avatar shape="square"  :size="60"  class="header__navbar-logo-img" fit="fill" :src="$appSetting.LOGO_APP" /> -->
               <span class="header__naver-logo-title">{{$appSetting.NAME_APP}}</span>
         </div>
