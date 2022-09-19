@@ -12,10 +12,11 @@
           <div class="menu">
             <LeftMenu :activeMenu="activeMenu" />
           </div>
-          <div class="main">
+          <div class="main">            
           <!-- <el-avatar v-show="img" size="large" referrerpolicy="no-referrer" :src="img"/>  
            <h3 v-show="name">Hello: {{name}}</h3>   -->
-            <Transition duration="550" name="nested">              
+            <Transition duration="550" name="nested">        
+                    
               <RouterView />
             </Transition>
           </div>
@@ -26,6 +27,9 @@
           <ion-icon name="arrow-up-outline"></ion-icon>
         </a>
       </ScrollTopComponent>
+    </div>
+    <div class="menu__bottom_mobile">
+         <MenuBottomMobile/>
     </div>
     <footer class="footer">
       <div class="grid">
@@ -43,11 +47,12 @@ import Header from './Common/Header.vue'
 import Footer from './Common/Footer.vue'
 import Home from './views/Home.vue'
 import LeftMenu from './Common/LeftMenu.vue'
+import MenuBottomMobile from './Common/MenuBottomMobile.vue'
 import ScrollTopComponent from './Common/ScrollTop.vue'
 
 export default {
   components: {
-    Header,Footer,Home,LeftMenu,ScrollTopComponent
+    Header,Footer,Home,LeftMenu,ScrollTopComponent,MenuBottomMobile
   },
   data(){
     return{

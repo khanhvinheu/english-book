@@ -1,42 +1,45 @@
 <template>
     <nav class="header__navbar">
         <div class="header__navbar-logo">
-          <el-avatar shape="square"  :size="60"  class="header__navbar-logo-img" fit="fill" :src="$appSetting.LOGO_APP" />
+          <el-image :src="$appSetting.LOGO_APP" style="width: 60px; height: 60px" />
+          <!-- <el-avatar shape="square"  :size="60"  class="header__navbar-logo-img" fit="fill" :src="$appSetting.LOGO_APP" /> -->
           <span class="header__naver-logo-title">{{$appSetting.NAME_APP}}</span>
         </div>
         <div class="header__navbar-logo-mobile">
-              <el-avatar shape="square"  :size="60"  class="header__navbar-logo-img" fit="fill" :src="$appSetting.LOGO_APP" />
+              <el-image :src="$appSetting.LOGO_APP" style="width: 50px; height: 50px" />
+              <!-- <el-avatar shape="square"  :size="60"  class="header__navbar-logo-img" fit="fill" :src="$appSetting.LOGO_APP" /> -->
               <span class="header__naver-logo-title">{{$appSetting.NAME_APP}}</span>
         </div>
         <div class="header__button-navbar">
           <MenuMobileComponentVue :activeMenu="activeMenu"/>
-        </div>
-        <div class="header__navbar-search">
+        </div>     
+
+        <div class="header__navbar-button" style="display: flex; align-items: center;">               
+          <div class="header__navbar-search">
            <el-input
-            v-model="input_search"
-            id="header__navbar-input-search"
             size="large"
-            placeholder="Tìm kiếm khóa học, bài viết, video...."
+            v-model="input_search"
+            id="header__navbar-input-search"           
+            placeholder="Tìm kiếm ..."
              :prefix-icon="Search"
           />
-        </div>      
-
-        <div class="header__navbar-button" style="display: flex; align-items: center;">
-            <!-- <el-button @click="toggle($event)" class="border-none w-full bg-transparent cursor-pointer" style="height: var(--ep-menu-item-height);border-radius: 50px;margin-right: 10px">
-                <ion-icon style="font-size: 20px ; padding-right: 5px" :name="DarkMode?'moon-outline':'sunny-outline'"></ion-icon>
-                <span>{{DarkMode?'Dark':'Light'}}</span>
-            </el-button> -->
-            <el-switch
-             @click="toggle($event)"
-              v-model="DarkMode"              
-              inline-prompt
-              style="--el-switch-on-color: #fff; --el-switch-off-color: #000"
-              :active-icon="icon.Moon"
-              :inactive-icon="icon.Sunny"
-            />
-            <label for="checkbox__search"><el-icon class="header__navbar-button-search" style="font-size: 24px;"><search/></el-icon></label>
-
-            <el-button class="header__navbar-button-login" v-show="userInfo.length==0" style="background-color:#f05123; color: #ffffff; border: #f05123;height: 40px" @click='$router.push({path: "/login"})' round>Đăng nhập</el-button>
+        </div>  
+          <div class="btn__dark-mode"> 
+            <el-switch             
+              @click="toggle($event)"
+                v-model="DarkMode"              
+                inline-prompt
+                size="large"
+                style="--el-switch-on-color: #fff; --el-switch-off-color: #000;"
+                :active-icon="icon.Moon"
+                :inactive-icon="icon.Sunny"
+              />         
+            </div>
+          
+            <label for="checkbox__search"><el-icon class="header__navbar-button-search" style="font-size: 24px;margin-left: 10px;"><search/></el-icon></label>
+            <el-button class="header__navbar-button-login" v-show="userInfo.length==0" size="large" 
+              style="background-color:#f05123; color: #ffffff; border: #f05123; margin-left:10px" 
+              @click='$router.push({path: "/login"})' round>Đăng nhập</el-button>
 
             <el-popover
                     placement="bottom"
@@ -53,32 +56,14 @@
                  <span style="margin-top:10px">Xin chào: {{userInfo.name}}</span>
                 <el-button link @click="logout">Đăng xuất</el-button>
               </div>
-
             </el-popover>
-
-
-
-
-            <!-- <el-popover
-                    placement="bottom"
-                    title="Notification"
-                    :width="200"
-                    trigger="click"
-                    content="Check update version">
-              <template #reference>
-                <el-badge :value="9"  class="header__navbar-button-notification">
-                  <el-icon style="font-size: 25px;"><bell-filled/></el-icon>
-                </el-badge>
-              </template>
-            </el-popover> -->
-          <!-- Search Mobile -->
           <input type="checkbox" hidden id="checkbox__search" class="header__navbar-button-search-show">
           <label for="checkbox__search" class="nav__overlay-search"></label>
           <div class="header__nav-mobile-search">
             <label for="checkbox__search" class="header__button-close">
               <div class="header__navbar-logo-mobile">
-                <el-avatar shape="square"  :size="40"  class="header__navbar-logo-img" fit="fill" src="./img/logo.png" />
-                <span class="header__naver-logo-title">English-Book</span>
+                <el-image :src="$appSetting.LOGO_APP" style="width: 40px; height:40px" />
+                <span class="header__naver-logo-title">{{$appSetting.NAME_APP}}</span>
               </div>
               <el-icon style="font-size: 25px;" class="close__btn"><close-bold /></el-icon>
             </label>
@@ -96,8 +81,8 @@
             </ul>
           </div>
         </div>
-         <label for="check__show-nav" class="header__button-show">
-         <el-icon style="font-size: 25px;"><expand /></el-icon></label>
+         <!-- <label for="check__show-nav" class="header__button-show">
+         <el-icon style="font-size: 25px;"><expand /></el-icon></label> -->
       </nav>
 </template>
 <style>

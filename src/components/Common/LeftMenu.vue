@@ -23,6 +23,17 @@
         </el-tooltip>
       </li> 
     </ul>
+    <ul>
+      <li><el-switch
+              @click="toggle($event)"
+                v-model="DarkMode"              
+                inline-prompt
+                size="large"
+                style="--el-switch-on-color: #fff; --el-switch-off-color: #000;"
+                :active-icon="icon.Moon"
+                :inactive-icon="icon.Sunny"
+              />          </li>
+    </ul>
   </nav>
 </template>
 <script>
@@ -32,8 +43,11 @@ import {
   Location,
   Setting,
   Plus,
-  HomeFilled,Notebook,VideoCamera,TrendCharts,Search,CloseBold,Expand,BellFilled
+  HomeFilled,Notebook,VideoCamera,TrendCharts,Search,CloseBold,Expand,BellFilled,Moon,Sunny
 } from "@element-plus/icons-vue";
+import { useDark, useToggle } from '@vueuse/core'
+const isDark = useDark()
+const toggleDark = useToggle(isDark)
 import { ref } from 'vue'
 export default {   
     components:{
@@ -42,13 +56,14 @@ export default {
         Setting,
         IconMenu,
         Plus,
-        HomeFilled,Notebook,VideoCamera,TrendCharts,Search,CloseBold,Expand,BellFilled
+        HomeFilled,Notebook,VideoCamera,TrendCharts,Search,CloseBold,Expand,BellFilled,Moon,Sunny
     },
     
     props:['activeMenu'],
     data(){
       return{
-        icon:{Plus},
+        DarkMode:'',
+        icon:{Plus,Moon,Sunny},
         itemMenu:[
           {
             title:'Blog',
@@ -92,7 +107,14 @@ export default {
       }
     },
     methods:{
+      toggle(val){
+          toggleDark()
+          this.DarkMode = isDark._value
+      },
     },
+    mounted(){
+      this.DarkMode = isDark.value
+    }
 
 }
 </script>

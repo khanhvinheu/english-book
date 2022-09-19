@@ -9,6 +9,7 @@
 .header__navbar-logo-img{
     /*box-shadow: rgb(100 100 111 / 20%) 0px 7px 29px 0px;*/
 }
+.btn__dark-mode{display: none;}
 
 .header__navbar{
     display: flex;
@@ -19,8 +20,8 @@
     background-color: #ffffff;
     box-shadow: rgb(100 100 111 / 20%) 0px 7px 29px 0px;
     /*border-bottom: 1px solid rgba(236, 226, 226, 0.877) ;*/
-    padding: 7px 10px 7px;
-    min-height: 66px;
+  
+    padding: 2px;
     position: sticky;
     z-index: 20;
     position: -webkit-sticky;
@@ -32,6 +33,23 @@
     transition: transform .5s ease,-webkit-transform .5s ease;
     will-change: transform;
 }
+
+.menu__bottom_mobile{
+    display: none;
+    padding: 11px;
+    width: 95%; 
+    background-color: rgb(255,255,255,0.95); 
+    position: sticky !important; 
+    bottom: 10px;
+    box-shadow: rgb(100 100 111 / 50%) 0px 7px 29px 0px;
+    margin: auto;
+    border-radius: 10px;
+}
+
+.dark .menu__bottom_mobile{
+    background-color: rgba(0, 0, 0, 0.95);
+}
+
 
 .dark .el-switch__action{
     background-color: #000;
@@ -49,7 +67,11 @@
     color: #555;
 }
 .header__naver-logo-title{
-    color: #000;
+   
+   
+    background: linear-gradient(to right, rgb(254, 33, 94), rgb(255, 148, 2));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
     font-size: 2rem;
     padding-left: 5px;
     font-weight: bold;
@@ -74,7 +96,8 @@
     height: 100vh;
     z-index: 999999;
     transform: translateX(-100%);
-    transition: linear 0.2s;
+    transition: linear 0.2s;   
+    
 }
 
 .dark .header__nav-mobile{
@@ -93,6 +116,9 @@
     z-index: 999999;
     transform: translateX(-200%);
     transition: linear 0.2s;
+}
+.dark .header__nav-mobile-search{
+    background-color: #000;
 }
 
 .nav__overlay,
@@ -155,6 +181,7 @@
 }
 #header__navbar-input-search{
     border-radius: 20px;
+    min-width: 200px;
 }
 
 .header__navbar-button-search-show:checked ~  .nav__overlay-search{
@@ -214,7 +241,10 @@
     .header__button-navbar,
     .header__button-show,
     .header__navbar-button-notification ,    
-    .header__navbar-button-search{
+    .header__navbar-button-search,
+    .menu__bottom_mobile,
+    .btn__dark-mode
+    {
         display: block !important;
     }
     .header__navbar-logo-mobile{
