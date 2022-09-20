@@ -11,7 +11,11 @@
 }
 /*Main*/
 .container{
-    padding: 10px;
+    //padding: 10px;
+    background:url("./public/tech.png");
+}
+.dark .container{
+    background-color: #000000;
 }
 menu{
     padding: 10px;
