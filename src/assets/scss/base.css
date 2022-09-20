@@ -57,12 +57,9 @@ html {
     /* width: 1200px; */
     max-width: 100%;
     margin: 0 auto;
-    background-color: rgb(255,255,255,0.9)
 }
 
-.dark .grid{
-    background-color: rgb(0,0,0,0.9)
-}
+
 
 .grid__full-width{
     width: 100%;
