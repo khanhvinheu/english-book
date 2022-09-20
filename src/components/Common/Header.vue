@@ -42,7 +42,9 @@
               @click='$router.push({path: "/login"})' round>
               <el-icon style="font-size: 20px;"><Avatar /></el-icon>
             </el-button>
-            <el-icon class="header__navbar-button-search" style="font-size: 24px;"><ShoppingCartFull/></el-icon>
+            <el-badge :value="1" class="item">
+                <el-icon class="header__navbar-button-search" style="font-size: 24px;"><ShoppingCartFull/></el-icon>
+            </el-badge>
 
             <!-- <el-popover
                     placement="bottom"

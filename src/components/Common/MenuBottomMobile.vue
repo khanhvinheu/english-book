@@ -1,23 +1,25 @@
-<template>    
-    <div style="display:flex; justify-content: space-around; align-items: center;height: 40px;">      
+<template>
+    <div style="display:flex; justify-content: space-around; align-items: center;height: 40px;">
          <div class="item__menu-bottom">
             <el-icon style="font-size: 20px;"><HomeFilled/></el-icon>
             <span>Trang Chủ</span>
         </div>
-         <div class="item__menu-bottom">
-            <el-icon style="font-size: 20px;"><Message/></el-icon>
-            <span> Tin nhắn</span>
-        </div>
+         <el-badge :value="1" class="item">
+             <div class="item__menu-bottom">
+                     <el-icon style="font-size: 20px;"><Message/></el-icon>
+                     <span> Tin nhắn</span>
+            </div>
+         </el-badge>
          <div class="item__menu-bottom">
             <el-icon style="font-size: 20px;"><Setting/></el-icon>
             <span> Cài đặt</span>
         </div>
-       
+
         <label for="check__show-nav">
             <div class="item__menu-bottom">
             <el-icon style="font-size: 20px;"><Expand/></el-icon>
             <span> Danh mục</span>
-        </div></label>      
+        </div></label>
     </div>
 </template>
 <script>
@@ -46,7 +48,7 @@ export default {
                 Plus,
                 HomeFilled,Notebook,VideoCamera,TrendCharts,Search,CloseBold,Expand,BellFilled, Avatar,DArrowRight,Sunny
             },
-        
+
         }
     },
 }
