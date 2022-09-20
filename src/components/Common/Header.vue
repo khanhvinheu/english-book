@@ -12,36 +12,37 @@
         </div>
         <div class="header__button-navbar">
           <MenuMobileComponentVue :activeMenu="activeMenu"/>
-        </div>     
+        </div>
 
-        <div class="header__navbar-button" style="display: flex; align-items: center;">               
+        <div class="header__navbar-button" style="display: flex; align-items: center;">
           <div class="header__navbar-search">
            <el-input
             size="large"
             v-model="input_search"
-            id="header__navbar-input-search"           
+            id="header__navbar-input-search"
             placeholder="Tìm kiếm ..."
              :prefix-icon="Search"
           />
-        </div>  
-          <div class="btn__dark-mode"> 
-            <el-switch             
+        </div>
+          <div class="btn__dark-mode">
+            <el-switch
               @click="toggle($event)"
-                v-model="DarkMode"              
+                v-model="DarkMode"
                 inline-prompt
                 size="large"
                 style="--el-switch-on-color: #fff; --el-switch-off-color: #000;"
                 :active-icon="icon.Moon"
                 :inactive-icon="icon.Sunny"
-              />         
+              />
             </div>
-          
+
             <label for="checkbox__search"><el-icon class="header__navbar-button-search" style="font-size: 24px;margin-left: 10px;"><search/></el-icon></label>
-            <el-button class="header__navbar-button-login" v-show="userInfo.length==0" size="large" 
-              style="background-color:#f05123; color: #ffffff; border: #f05123; margin-left:10px;" 
+            <el-button class="header__navbar-button-login" v-show="userInfo.length==0" size="large"
+              style="background-color:#f05123; color: #ffffff; border: #f05123; margin-left:10px;"
               @click='$router.push({path: "/login"})' round>
               <el-icon style="font-size: 20px;"><Avatar /></el-icon>
             </el-button>
+            <el-icon class="header__navbar-button-search" style="font-size: 24px;"><ShoppingCartFull/></el-icon>
 
             <!-- <el-popover
                     placement="bottom"
@@ -100,7 +101,7 @@ import {
   Location,
   Setting,
   Plus,
-  HomeFilled,Notebook,VideoCamera,TrendCharts,Search,CloseBold,Expand,BellFilled, Avatar,DArrowRight,Sunny
+  HomeFilled,Notebook,VideoCamera,TrendCharts,Search,CloseBold,Expand,BellFilled, Avatar,DArrowRight,Sunny,ShoppingCartFull
 } from "@element-plus/icons-vue";
 // import { toggleDark } from '../../composables';
 import { useDark, useToggle } from '@vueuse/core'
@@ -117,14 +118,28 @@ export default {
         Setting,
         IconMenu,
         Plus,
-        Check, Close,
-        HomeFilled,Notebook,VideoCamera,TrendCharts,Search,CloseBold,Expand,BellFilled,Avatar,MenuMobileComponentVue,DArrowRight,Moon,Sunny 
+        Check,
+        Close,
+        HomeFilled,
+        Notebook,
+        VideoCamera,
+        TrendCharts,
+        Search,
+        CloseBold,
+        Expand,
+        BellFilled,
+        Avatar,
+        MenuMobileComponentVue,
+        DArrowRight,
+        Moon,
+        Sunny,
+        ShoppingCartFull
     },
     props:['activeMenu'],
     data(){
         return{
             icon:{
-              Document,Avatar,Check, Close,Moon,Sunny
+              Document,Avatar,Check, Close,Moon,Sunny,ShoppingCartFull
             },
             input_search:'',
             selected:'',
