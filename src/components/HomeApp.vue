@@ -1,12 +1,17 @@
 <template>
   <div class="app">
-     <el-progress style="position: absolute; width: 100%; height:10px ; z-index: 9999; top: -3px" v-show="loading" :percentage="100" :show-text="false"  stroke-width="4" :format="format" :indeterminate="true" color="ỏ" />
-    <header class="header">
+     <el-progress style="position: absolute; width: 100%; height:10px ; z-index: 9999; top: -3px" v-show="loading" :percentage="100" :show-text="false"  stroke-width="4" :format="format" :indeterminate="true" color="success" />
+     
+    <header class="header" v-bind:class="{'header-scrolled':visibleHeader}">
       <div class="grid">
         <Header :activeMenu="activeMenu"></Header>
       </div>
     </header>
-    <div class="container">
+    <div class="banner">
+
+    </div>
+
+    <div class="container" style="padding: 10px">
       <div class="grid">
         <div class="grid__row">
           <div class="menu">
@@ -62,7 +67,8 @@ export default {
       activeMenu:'',
       img:'',
       name:'',
-      visibleMenu: false
+      visibleMenu: false,
+      visibleHeader: false,
     }
   },
    mounted(){
@@ -90,7 +96,11 @@ export default {
   },
   methods:{
     scrollListener: function (e) {
+
+    
       this.visibleMenu = window.scrollY< (window.screen.height-200)
+      this.visibleHeader =  window.scrollY > 100       
+      
 
     }
 
