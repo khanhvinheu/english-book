@@ -9,6 +9,16 @@
     font-size: 3rem;
     color: rgb(0, 255, 184);
 }
+
+.background-mobile-top{   
+    display: none;
+    position:absolute; 
+    height: 380px; 
+    width: 100%; 
+     /*background: rgb(240,81,35);
+    background: linear-gradient(184deg, rgba(240,81,35,1) 0%, rgba(240,122,88,1) 35%, rgba(250,250,250,0.4990371148459384) 100%);
+    border-bottom-right-radius: 50px;   */  
+}
 /*Main*/
 .container{
     //padding: 10px;
@@ -65,7 +75,10 @@ menu{
     .menu{
         display: none;
     }
-
+    .background-mobile-top{
+        display: block;
+    }
+   
 }
 @media screen and (max-width: 63.9375em) and (min-width: 46.25em) {
     .cards{
@@ -74,6 +87,7 @@ menu{
     .menu{
         display: none;
     }
+   
 
 }
 @media screen and (min-width: 64em){

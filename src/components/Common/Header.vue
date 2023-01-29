@@ -1,5 +1,5 @@
 <template>
-    <nav class="header__navbar">
+    <nav class="header__navbar" >
         <div class="header__navbar-logo">
           <el-image :src="$appSetting.LOGO_APP" style="width: 60px; height: 60px" />
           <!-- <el-avatar shape="square"  :size="60"  class="header__navbar-logo-img" fit="fill" :src="$appSetting.LOGO_APP" /> -->

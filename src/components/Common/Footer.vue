@@ -43,7 +43,7 @@
           <h3 class="footer__top_list-title">Website {{$appSetting.NAME_APP}}</h3>
         </li>
         <li class="footer__top-lits-item">Ngày bắt đầu: 20/4/2022</li>
-        <li class="footer__top-lits-item">Lĩnh vực: Học tập</li>
+        <li class="footer__top-lits-item">Lĩnh vực: Thương mại</li>
         <li class="footer__top-lits-item">Version: 1.0.0</li>
       </ul>
     </div>

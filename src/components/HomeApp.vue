@@ -1,7 +1,20 @@
 <template>
   <div class="app">
-     <el-progress style="position: absolute; width: 100%; height:10px ; z-index: 9999; top: -3px" v-show="loading" :percentage="100" :show-text="false"  stroke-width="4" :format="format" :indeterminate="true" color="ỏ" />
-    <header class="header">
+    <div class="background-mobile-top"></div>
+    <el-progress
+      style="position: absolute; width: 100%; height: 10px; z-index: 9999; top: -3px"
+      v-show="loading"
+      :percentage="100"
+      :show-text="false"
+      stroke-width="4"
+      :format="format"
+      :indeterminate="true"
+      color="ỏ"
+    />
+    <header
+      class="header"
+      v-bind:style="{ 'background-color': visibleClassMenuTop ? '' : 'transparent' }"
+    >
       <div class="grid">
         <Header :activeMenu="activeMenu"></Header>
       </div>
@@ -12,11 +25,10 @@
           <div class="menu">
             <LeftMenu :activeMenu="activeMenu" />
           </div>
-          <div class="main">
-          <!-- <el-avatar v-show="img" size="large" referrerpolicy="no-referrer" :src="img"/>
+          <div class="main" style="z-index: 2">
+            <!-- <el-avatar v-show="img" size="large" referrerpolicy="no-referrer" :src="img"/>
            <h3 v-show="name">Hello: {{name}}</h3>   -->
             <Transition duration="550" name="nested">
-
               <RouterView />
             </Transition>
           </div>
@@ -29,88 +41,88 @@
       </ScrollTopComponent>
     </div>
     <div class="menu__bottom_mobile" v-if="visibleMenu">
-      <MenuBottomMobile/>
-
+      <MenuBottomMobile />
     </div>
 
     <footer class="footer">
       <div class="grid">
-        <Footer/>
+        <Footer />
       </div>
     </footer>
   </div>
 </template>
 <style>
-@import '../assets/scss/container.scss';
-@import '../assets/scss/transitionVue.scss';
+@import "../assets/scss/container.scss";
+@import "../assets/scss/transitionVue.scss";
 </style>
 <script>
-import Header from './Common/Header.vue'
-import Footer from './Common/Footer.vue'
-import Home from './views/Home.vue'
-import LeftMenu from './Common/LeftMenu.vue'
-import MenuBottomMobile from './Common/MenuBottomMobile.vue'
-import ScrollTopComponent from './Common/ScrollTop.vue'
+import Header from "./Common/Header.vue";
+import Footer from "./Common/Footer.vue";
+import Home from "./views/Home.vue";
+import LeftMenu from "./Common/LeftMenu.vue";
+import MenuBottomMobile from "./Common/MenuBottomMobile.vue";
+import ScrollTopComponent from "./Common/ScrollTop.vue";
 
 export default {
   components: {
-    Header,Footer,Home,LeftMenu,ScrollTopComponent,MenuBottomMobile
+    Header,
+    Footer,
+    Home,
+    LeftMenu,
+    ScrollTopComponent,
+    MenuBottomMobile,
   },
-  data(){
-    return{
-      loading:false,
-      activeMenu:'',
-      img:'',
-      name:'',
-      visibleMenu: false
-    }
+  data() {
+    return {
+      loading: false,
+      activeMenu: "",
+      img: "",
+      name: "",
+      visibleMenu: false,
+      visibleClassMenuTop: false,
+    };
   },
-   mounted(){
-        window.addEventListener('scroll', this.scrollListener)
-        //  setTimeout(()=>{
-        //      console.log(this.$gAuth.GoogleAuth.currentUser.tb.Lu)
-        //      this.img = this.$gAuth.GoogleAuth.currentUser.tb.Lu.rN
-        //      this.name = this.$gAuth.GoogleAuth.currentUser.tb.Lu.tf
-        //      localStorage.setItem('item',JSON.stringify(this.$gAuth.GoogleAuth.currentUser.tb.Lu))
-        //  },1500)
+  mounted() {
+    window.addEventListener("scroll", this.scrollListener);
+    //  setTimeout(()=>{
+    //      console.log(this.$gAuth.GoogleAuth.currentUser.tb.Lu)
+    //      this.img = this.$gAuth.GoogleAuth.currentUser.tb.Lu.rN
+    //      this.name = this.$gAuth.GoogleAuth.currentUser.tb.Lu.tf
+    //      localStorage.setItem('item',JSON.stringify(this.$gAuth.GoogleAuth.currentUser.tb.Lu))
+    //  },1500)
 
-        // START NEW CODE
-        // auth2.currentUser.listen(function(googleUser) {
-        //     if (googleUser && (gProfile = googleUser.getBasicProfile())) {
-        //         var name   = gProfile.getName();
-        //         var email  = gProfile.getEmail();
-        //         var imgUrl = gProfile.getImageUrl();
+    // START NEW CODE
+    // auth2.currentUser.listen(function(googleUser) {
+    //     if (googleUser && (gProfile = googleUser.getBasicProfile())) {
+    //         var name   = gProfile.getName();
+    //         var email  = gProfile.getEmail();
+    //         var imgUrl = gProfile.getImageUrl();
 
-        //         console.log({name, email, imgUrl});
-        //     }
-        // });
-        // END NEW CODE
-
-
+    //         console.log({name, email, imgUrl});
+    //     }
+    // });
+    // END NEW CODE
   },
-  methods:{
+  methods: {
     scrollListener: function (e) {
-      this.visibleMenu = window.scrollY< (window.screen.height-200)
-
-    }
-
+      this.visibleMenu = window.scrollY < window.screen.height - 200;
+      this.visibleClassMenuTop = window.scrollY > 10;
+    },
   },
   beforeDestroy: function () {
-    window.removeEventListener('scroll', this.scrollListener)
+    window.removeEventListener("scroll", this.scrollListener);
   },
-  created(){
-      this.activeMenu = this.$route.name
+  created() {
+    this.activeMenu = this.$route.name;
   },
-  watch:{
-    $route(to,from){
-      this.activeMenu = to.name
-      this.loading = true
-      setTimeout(()=>{
-      this.loading = false
-    },1000)
-    }
-  }
-
+  watch: {
+    $route(to, from) {
+      this.activeMenu = to.name;
+      this.loading = true;
+      setTimeout(() => {
+        this.loading = false;
+      }, 1000);
+    },
+  },
 };
 </script>
-
